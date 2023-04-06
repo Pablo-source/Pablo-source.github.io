@@ -2,8 +2,9 @@
 title: "About"
 ---
 
-This is my personal website where I will publish Quarto documents about Data Analysis, statistics, modelling and visualization using R and Python 
+This is my personal website where I will publish Quarto documents about
+Data Analysis, statistics, time series modelling and visualization using R and
+Python
 
-```{r}
-1 + 1
+```{}
 ```
