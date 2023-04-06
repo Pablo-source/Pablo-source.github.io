@@ -1,0 +1,11 @@
+---
+title: "Pablo-source.github.io"
+---
+
+This is my personal website where I will publish Quarto documents about Data Analysis, statistics, predictive modelling and visualization using R and Python
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+```{r}
+1 + 1
+```
