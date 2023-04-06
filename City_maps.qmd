@@ -1,0 +1,155 @@
+---
+title: "City_maps"
+title-block-banner: true
+title-block-banner-color: cornflowerblue
+author: "Pablo Leon"
+date: "4/06/2023"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+    code-fold: true
+    editor: visual
+---
+
+
+```{r markdown custom style, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
+                      dpi = 180, fig.width = 8, fig.height = 5)
+library(tidyverse) 
+```
+
+## Creating city maps using **osmdata** package 
+
+This is a project to build maps with global open access mapping data using OSMDATA package in R.
+
+<https://docs.ropensci.org/osmdata/articles/osmdata.html>.
+
+In the package website, they explain that working with open access map data, ensures transparent data provenance and ownership, allowing anyone to contribute, encouraging democratic decision making and citizen science. OSM is a global open access mapping project, which is free and open under the ODbL licence (OpenStreetMap contributors 2017)
+
+## Working with vector data
+
+OpenStreetMap (OSM) project information can be accessed via overpassqueries using **osmdata** package in R. This package obtain OSM data from the overpass API, which is a read-only API that serves up custom selected parts of the the OSM map data.
+
+## Install and load OSMDATA package from CRAN
+
+To start working with Open OpenStreetMap package, install it from CRAN
+
+```{r install OpenStreetMap}
+# install.packages("osmdata",dependencies = TRUE)
+```
+
+And then load it the usual way
+
+```{r load osmdata}
+#| echo: false
+library(osmdata)
+```
+
+From osmdata package we will use these functions to plot our map:
+
+-   getbb(): Get bounding box for a given place name
+-   available_features(): List recognized features in OpenStreetMap(OSM)
+-   available_features(): List recognized features in OSM. This function returns a character vector of all known features
+-   available_tags(): List tags associated with a feature
+
+Once we know which features and tags we want to include in our map, we can start building the query to the API to retrieve these features
+
+-   opq(): Build an Overpass query
+-   add_osm_feature(): Add a feature to an Overpass query. We specify the feature we want to plot and within that feature, we can also include a set of tags to be plotted in the map. As in the example below, we might want to plot **"highway"** feature in the map, so we include it in the Overpass query, but also we can specify other tags within that feature such as **""motorway","primary","secondary","tertiary","residential","living_street","unclassified"** as we can see in the Valencia city map example.
+-   osmdata_sf(): Return an OSM Overpass query as an osmdata object in sf format.
+
+The combination of the above three functions provides us with an object that ggplot() package can take in to create a map using the geom_sf() function.
+
+In a nutshell, a sf object is a collection of simple features that includes attributes and geometries in the form of a data frame. It is a data frame (or tibble) with rows of features, columns of attributes, and a special geometry column that contains the spatial aspects of the features.
+
+For a further explantion about sf objects, please refer to Jesse Sadler website: \[sf objects\]<https://www.jessesadler.com/post/simple-feature-objects/#:~:text=At%20its%20most%20basic%2C%20an,spatial%20aspects%20of%20the%20features.>
+
+Load also extra libraries for data wrangling and to create plots
+
+```{r load required libraries}
+pacman::p_load(here,tidyverse,osmdata,sf,showtext)
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+## Visualize Valencia city map using OpenStreetMap tutorial
+
+When building maps using OpenStreetMap, we can think about them in similar terms as ggplot2 plots, in the sense we build them step by step, adding one layer at a time to display the required information on top of the initial map of the region we want to create a map from.
+
+Having selected the city we want to plot, then we use getbb() function to obtain a bounding box for a given place name. In this instance I will plot the city of Valencia in Spain.
+
+getbb() provides latitude and longitude coordinates associated with Valencia city in Spain
+
+```{r Bounding box for Valencia city}
+getbb("Valencia Spain")
+
+```
+
+
+## 1. Select your reagion and add one feature
+
+Now that I want to plot a map of Valencia I need to choose which features do I want to plot. Each feature is defined by a key and each key is sub-divided into further values.
+
+For example, if I want to start plotting *roads* or highways into my map, I need to first identify how roads are defined in osmdata package. For that we use available_features() function to choose different roads or transportation routes defined in the map
+
+```{r display features}
+# Not run as there are more than 250 elements
+# available_features()
+```
+
+From the above list of features I can see "highway" as available key, so now I need to know which specific values are linked to that key. For tha I will use available_tags() function, to find out which values are related to the key "highway"
+
+```{r get values tags for highway key}
+available_tags("highway")
+```
+
+As I want to start by plotting the main roads in the city of Valencia, i will choose a handful of the above tags: motorway, primary, secondary, tertiary,residential,living_street, unclassified.
+
+## 2. Choosing elements for map first layer
+
+We name each layer with the key and values we want to plot in the map. So for this first example, I want to see several types of roads in the region of Valencia
+
+```{r Map layer 01 roads}
+# MAP LAYER 01: roads  
+roads <- getbb("Valencia Spain") %>% 
+         opq(timeout =  3500) %>% 
+         add_osm_feature(key = "highway",
+                        value = c("motorway","primary","secondary","tertiary",
+                                  "residential","living_street","unclassified")) %>% 
+         osmdata_sf()
+roads
+```
+
+## 3. Building maps in layers by adding natural and urban features
+
+### 3.1 Initial Valencia city map showing roads and highways
+
+Using ggplot2, we use the sf cartographic object we queried from the OpenMap API, mapping several sf objects via ggplot2 and geom_sf() functions.
+
+Also, It is in this step where we make use of getbb("Valencia Spain") function, to ensure the features we match the specific latitude and longitude of the city we want to plot.
+
+We have created so far just one geom_sf() object, we include it within the ggplot() function alongside the lat and long coordinated of Valencia.
+
+Prior to producing the final map, we define the color palette for each new feature
+
+```{r map  roads color palette}
+# Remember to enclose Hexadecimal colors in apostrophes 
+road_color <- '#000000'
+coastline_color <- '#000000'
+```
+
+Then we can combine all previous scripts to create our first map
+
+```{r Valencia road map, warning=FALSE}
+Valencia_roads_map <- ggplot() +
+                  geom_sf(data = roads$osm_lines,
+                          inherit.aes = FALSE,
+                          color = road_color
+                            ) +
+                  # Define city coordinates for maps. Given by getbb("Valencia Spain") function
+                  coord_sf(xlim = c(-0.4325512, -0.2725205),
+                           ylim = c(39.2784496, 39.5666089),
+                           expand = FALSE)
+Valencia_roads_map
+```

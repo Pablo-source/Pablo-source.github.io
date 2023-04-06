@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Pablo Leon">
-<meta name="dcterms.date" content="2023-04-02">
+<meta name="dcterms.date" content="2023-04-06">
 
-<title>Pablo-source.github.io - City maps using OpenStreetMap R package</title>
+<title>Pablo-source.github.io - City_maps</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -157,6 +157,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="./about.html">
  <span class="menu-text">About</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./City_maps.html" aria-current="page">
+ <span class="menu-text">City_maps</span></a>
+  </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
@@ -167,7 +171,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">City maps using OpenStreetMap R package</h1>
+      <h1 class="title">City_maps</h1>
                       </div>
   </div>
     
@@ -184,7 +188,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">April 2, 2023</p>
+        <p class="date">April 6, 2023</p>
       </div>
     </div>
     
@@ -209,13 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#building-maps-in-layers-by-adding-natural-and-urban-features" id="toc-building-maps-in-layers-by-adding-natural-and-urban-features" class="nav-link" data-scroll-target="#building-maps-in-layers-by-adding-natural-and-urban-features">3. Building maps in layers by adding natural and urban features</a>
   <ul class="collapse">
   <li><a href="#initial-valencia-city-map-showing-roads-and-highways" id="toc-initial-valencia-city-map-showing-roads-and-highways" class="nav-link" data-scroll-target="#initial-valencia-city-map-showing-roads-and-highways">3.1 Initial Valencia city map showing roads and highways</a></li>
-  <li><a href="#valencia-city-map-including-roads-and-coastline" id="toc-valencia-city-map-including-roads-and-coastline" class="nav-link" data-scroll-target="#valencia-city-map-including-roads-and-coastline">3.2 Valencia city map including roads and coastline</a></li>
-  <li><a href="#new-water-bodies-features-added-to-valencia-city-map" id="toc-new-water-bodies-features-added-to-valencia-city-map" class="nav-link" data-scroll-target="#new-water-bodies-features-added-to-valencia-city-map">3.3 New Water bodies features added to Valencia city map</a></li>
-  <li><a href="#including-specific-feature-by-name-in-the-map" id="toc-including-specific-feature-by-name-in-the-map" class="nav-link" data-scroll-target="#including-specific-feature-by-name-in-the-map">3.4 Including specific feature by name in the map</a></li>
   </ul></li>
-  <li><a href="#combining-all-features-into-a-single-map-and-applying-specific-theme" id="toc-combining-all-features-into-a-single-map-and-applying-specific-theme" class="nav-link" data-scroll-target="#combining-all-features-into-a-single-map-and-applying-specific-theme">4. Combining all features into a single map and applying specific Theme</a></li>
-  <li><a href="#save-output-map" id="toc-save-output-map" class="nav-link" data-scroll-target="#save-output-map">5. Save output map</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -382,315 +380,9 @@ y 39.2784496 39.5666089</code></pre>
 <p><img src="City_maps_files/figure-html/Valencia road map-1.png" class="img-fluid" width="1440"></p>
 </div>
 </div>
-</section>
-<section id="valencia-city-map-including-roads-and-coastline" class="level3">
-<h3 class="anchored" data-anchor-id="valencia-city-map-including-roads-and-coastline">3.2 Valencia city map including roads and coastline</h3>
-<p>We now include a new feature to our map, this time we want to map the coastline and natural water features int he Valencia region.</p>
-<p>We start by choosing the relevant key feature labelled as “natural” and browse different water related tags to be included in our map.</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">available_tags</span>(<span class="st">"natural"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "arch"          "arete"         "bare_rock"     "bay"          
- [5] "beach"         "blowhole"      "cape"          "cave_entrance"
- [9] "cliff"         "coastline"     "crevasse"      "dune"         
-[13] "earth_bank"    "fell"          "fumarole"      "geyser"       
-[17] "glacier"       "grassland"     "heath"         "hill"         
-[21] "hot_spring"    "isthmus"       "moor"          "mud"          
-[25] "peak"          "peninsula"     "reef"          "ridge"        
-[29] "rock"          "saddle"        "sand"          "scree"        
-[33] "scrub"         "shingle"       "shoal"         "shrubbery"    
-[37] "sinkhole"      "spring"        "stone"         "strait"       
-[41] "tree"          "tree_row"      "tundra"        "valley"       
-[45] "volcano"       "water"         "wetland"       "wood"         </code></pre>
-</div>
-</div>
-<p>At a first glance, we can use those tabs related to coastal geological features such as “bay”,“water”,“beach”,“wetland” and “dune”. Let’s create a new object to include all these tags.</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Vlc_coastline <span class="ot">&lt;-</span> <span class="fu">getbb</span>(<span class="st">"Valencia Spain"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">opq</span>(<span class="at">timeout =</span>  <span class="dv">3500</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">add_osm_feature</span>(<span class="at">key =</span> <span class="st">"natural"</span>,</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">value =</span> <span class="fu">c</span>(<span class="st">"bay"</span>,<span class="st">"water"</span>,<span class="st">"beach"</span>,<span class="st">"wetland"</span>,<span class="st">"dune"</span>,<span class="st">"coastline"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">osmdata_sf</span>()</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>Vlc_coastline</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>In order to display the sea bay in front of Valencia we define it as multipolygons object</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Vlc_coastline_multipolygons <span class="ot">&lt;-</span> Vlc_coastline<span class="sc">$</span>osm_multipolygons</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>We can create now a new map that will combine both coastline and road features</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>road_color <span class="ot">&lt;-</span> <span class="st">'#1E212B'</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>coastline_color <span class="ot">&lt;-</span> <span class="st">'#D4B483'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>This is a new map that will combine roads and coastline layers</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Valencia_coastline_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># roads</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">geom_sf</span>(<span class="at">data =</span> roads<span class="sc">$</span>osm_lines,</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> road_color</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                            ) <span class="sc">+</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># coastline as multipolygons</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">geom_sf</span>(<span class="at">data =</span> Vlc_coastline_multipolygons,</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>                          <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> coastline_color</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>                            ) <span class="sc">+</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>                 <span class="co"># Define city coordinates for maps. Given by getbb("Valencia Spain") function</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.4325512</span>, <span class="sc">-</span><span class="fl">0.2725205</span>),</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>                           <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">39.2784496</span>, <span class="fl">39.5666089</span>),</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>                           <span class="at">expand =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>Valencia_coastline_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="City_maps_files/figure-html/Valencia coastline roads map-1.png" class="img-fluid" width="1440"></p>
-</div>
-</div>
-</section>
-<section id="new-water-bodies-features-added-to-valencia-city-map" class="level3">
-<h3 class="anchored" data-anchor-id="new-water-bodies-features-added-to-valencia-city-map">3.3 New Water bodies features added to Valencia city map</h3>
-<p>We want to include the see and different water bodies such as reservoirs and natural lagoons in the map, in the South part of the City of Valencia ther is a big lagoon called “La Albufera” we want to display it in hues of blue colors.</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>Vlc_water <span class="ot">&lt;-</span> <span class="fu">getbb</span>(<span class="st">"Valencia Spain"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">opq</span>(<span class="at">timeout =</span>  <span class="dv">3500</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">add_osm_feature</span>(<span class="at">key =</span> <span class="st">"water"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">osmdata_sf</span>()</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>Vlc_sea <span class="ot">&lt;-</span> <span class="fu">getbb</span>(<span class="st">"Valencia Spain"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">opq</span>(<span class="at">timeout =</span>  <span class="dv">3500</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">add_osm_feature</span>(<span class="at">key =</span> <span class="st">"waterway"</span>,</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">value =</span> <span class="st">"river"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">osmdata_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>Define these two new water features as polygons</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>Vlc_water_multipolygons <span class="ot">&lt;-</span> Vlc_water<span class="sc">$</span>osm_multipolygons</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>Vlc_sea_multipolygons <span class="ot">&lt;-</span> Vlc_sea<span class="sc">$</span>osm_multipolygons</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>Then we can add these two new layers of water features to the existing map Define first two new colours for water features</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>water_color <span class="ot">&lt;-</span> <span class="st">'#0066CC'</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>waterway_color <span class="ot">&lt;-</span> <span class="st">'#99CCFF'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>Now we can produce a new map with the new water layers added to it.</p>
-<p>First we group all colour palettes uses on each feature on this new map</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>road_color <span class="ot">&lt;-</span> <span class="st">'#1E212B'</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>coastline_color <span class="ot">&lt;-</span> <span class="st">'#D4B483'</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>water_color <span class="ot">&lt;-</span> <span class="st">'#0066CC'</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>waterway_color <span class="ot">&lt;-</span> <span class="st">'#99CCFF'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>Valencia_waterways_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># roads</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">geom_sf</span>(<span class="at">data =</span> roads<span class="sc">$</span>osm_lines,</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> road_color</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>                            ) <span class="sc">+</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># coastline as multipolygons</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">geom_sf</span>(<span class="at">data =</span> Vlc_coastline_multipolygons,</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>                          <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> coastline_color</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>                            ) <span class="sc">+</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># water colour as multipolygons</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">geom_sf</span>(<span class="at">data =</span> Vlc_water_multipolygons,</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>                          <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> water_color</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>                            ) <span class="sc">+</span></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># waterway colour as multipolygons</span></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_sf</span>(<span class="at">data =</span> Vlc_sea_multipolygons,</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>                          <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>                          <span class="at">color =</span> waterway_color</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>                            ) <span class="sc">+</span></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Define city coordinates for maps. Given by getbb("Valencia Spain") function</span></span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.4325512</span>, <span class="sc">-</span><span class="fl">0.2725205</span>),</span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>                           <span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">39.2784496</span>, <span class="fl">39.5666089</span>),</span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>                           <span class="at">expand =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>Valencia_waterways_map                    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="City_maps_files/figure-html/Valencia coastline -1.png" class="img-fluid" width="1440"></p>
-</div>
-</div>
-</section>
-<section id="including-specific-feature-by-name-in-the-map" class="level3">
-<h3 class="anchored" data-anchor-id="including-specific-feature-by-name-in-the-map">3.4 Including specific feature by name in the map</h3>
-<p>This new map layer provides us with an efficient way of locating specific geological features by its common name. In this example I will include the l’Albufera freshwater lagoon. It is the largest freshwater lagoon in Spain, spanning more than 2,800 hectares.</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Albufera_lagoon  <span class="ot">&lt;-</span> <span class="fu">getbb</span>(<span class="st">"Valencia Spain"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">opq</span>(<span class="at">timeout =</span>  <span class="dv">3500</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">add_osm_feature</span>(<span class="at">key =</span> <span class="st">"natural"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">add_osm_feature</span>(<span class="at">key =</span> <span class="st">"name"</span>, <span class="at">value =</span> <span class="st">"l'Albufera"</span>, <span class="at">value_exact =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">osmdata_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>Again we define this lagoon as a polygon object in the map</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We choose multipolygons from shapefile to be plotted in the map </span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>Albufera_multipolygons <span class="ot">&lt;-</span> Albufera_lagoon<span class="sc">$</span>osm_multipolygons</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>Specific geological feature included by name in the map</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>road_color <span class="ot">&lt;-</span> <span class="st">'#1E212B'</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>coastline_color <span class="ot">&lt;-</span> <span class="st">'#D4B483'</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>water_color <span class="ot">&lt;-</span> <span class="st">'#0066CC'</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>waterway_color <span class="ot">&lt;-</span> <span class="st">'#99CCFF'</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>albufera_lagoon <span class="ot">&lt;-</span> <span class="st">"#0ACDFF"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>Valencia_lagoon_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># roads</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">geom_sf</span>(<span class="at">data =</span> roads<span class="sc">$</span>osm_lines,<span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,<span class="at">color =</span> road_color) <span class="sc">+</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># coastline</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">geom_sf</span>(<span class="at">data =</span> Vlc_coastline_multipolygons,<span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">fill =</span> waterway_color, <span class="at">color =</span> waterway_color) <span class="sc">+</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># water colour as multipolygons</span></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">geom_sf</span>(<span class="at">data =</span> Vlc_water_multipolygons,<span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">fill =</span> water_color, <span class="at">color =</span> water_color) <span class="sc">+</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># waterway colour as multipolygons</span></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">geom_sf</span>(<span class="at">data =</span> Vlc_sea_multipolygons,<span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">fill =</span> waterway_color, <span class="at">color =</span> waterway_color) <span class="sc">+</span></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># Adding l'Albufera lagoon to the map</span></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">geom_sf</span>(<span class="at">data =</span> Albufera_multipolygons,<span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">fill =</span> albufera_lagoon, <span class="at">color =</span> albufera_lagoon) <span class="sc">+</span></span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define city coordinates for maps. Given by getbb("Valencia Spain") function</span></span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.4325512</span>, <span class="sc">-</span><span class="fl">0.2725205</span>),<span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">39.2784496</span>, <span class="fl">39.5666089</span>),<span class="at">expand =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>Valencia_lagoon_map  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="City_maps_files/figure-html/Valencia lagoon map-1.png" class="img-fluid" width="2700"></p>
-</div>
-</div>
-</section>
-</section>
-<section id="combining-all-features-into-a-single-map-and-applying-specific-theme" class="level1">
-<h1>4. Combining all features into a single map and applying specific Theme</h1>
-<p>Now that we have defined several features to be plotted in our map (roads,coastline,waterways and rivers), we can combine them all into an output map. Again we add each of these feature using the geom_sf() function.</p>
-<p>This final step also includes making the map prettier by applying several theme options and adding a backgroud colour to the map as well as Title and Subtitle:</p>
-<ul>
-<li>Include Map title and subtitle</li>
-<li>Setup background colour</li>
-<li>Set map margins</li>
-</ul>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>road_color <span class="ot">&lt;-</span> <span class="st">'#1E212B'</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>coastline_color <span class="ot">&lt;-</span> <span class="st">'#D4B483'</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>water_color <span class="ot">&lt;-</span> <span class="st">'#0066CC'</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>waterway_color <span class="ot">&lt;-</span> <span class="st">'#99CCFF'</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>albufera_lagoon <span class="ot">&lt;-</span> <span class="st">"#0ACDFF"</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>font_color <span class="ot">&lt;-</span><span class="st">'#D2691E'</span> </span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>background_color <span class="ot">&lt;-</span> <span class="st">"#D4B483"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>Valencia_city_map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># roads</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">geom_sf</span>(<span class="at">data =</span> roads<span class="sc">$</span>osm_lines,<span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,<span class="at">color =</span> road_color) <span class="sc">+</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># coastline</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">geom_sf</span>(<span class="at">data =</span> Vlc_coastline_multipolygons,<span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">fill =</span> waterway_color, <span class="at">color =</span> waterway_color) <span class="sc">+</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># water colour as multipolygons</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">geom_sf</span>(<span class="at">data =</span> Vlc_water_multipolygons,<span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">fill =</span> water_color, <span class="at">color =</span> water_color) <span class="sc">+</span></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># waterway colour as multipolygons</span></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">geom_sf</span>(<span class="at">data =</span> Vlc_sea_multipolygons,<span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">fill =</span> waterway_color, <span class="at">color =</span> waterway_color) <span class="sc">+</span></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># Adding l'Albufera lagoon to the map</span></span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">geom_sf</span>(<span class="at">data =</span> Albufera_multipolygons,<span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">fill =</span> albufera_lagoon, <span class="at">color =</span> albufera_lagoon) <span class="sc">+</span></span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define city coordinates for maps. Given by getbb("Valencia Spain") function</span></span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.4325512</span>, <span class="sc">-</span><span class="fl">0.2725205</span>),<span class="at">ylim =</span> <span class="fu">c</span>(<span class="fl">39.2784496</span>, <span class="fl">39.5666089</span>),<span class="at">expand =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Include Map title and subtitle </span></span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Valencia ~ l'Albufera"</span>, <span class="at">subtitle =</span> <span class="st">'39.4699° N, 0.3763° W'</span>) <span class="sc">+</span></span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Apply specific theme to map title and sub-title</span></span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"Barlow"</span>,<span class="at">color =</span> font_color,<span class="at">size =</span> <span class="dv">9</span>, </span>
-<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>                              <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="dv">1</span>),</span>
-<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"Barlow"</span>,</span>
-<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">color =</span> font_color,</span>
-<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">size =</span> <span class="dv">5</span>,</span>
-<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">hjust =</span> <span class="dv">0</span> , <span class="at">vjust =</span> <span class="fl">2.3</span>),  </span>
-<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Setup background color for entire map </span></span>
-<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">colour =</span> background_color, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">size =</span> <span class="dv">1</span>),</span>
-<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="fl">0.6</span>,<span class="fl">1.6</span>,<span class="dv">1</span>,<span class="fl">1.6</span>),<span class="st">"cm"</span>),</span>
-<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> background_color)</span>
-<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a>  ) </span>
-<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a>Valencia_city_map </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="City_maps_files/figure-html/Valencia city map-1.png" class="img-fluid" width="2700"></p>
-</div>
-</div>
-</section>
-<section id="save-output-map" class="level1">
-<h1>5. Save output map</h1>
-<p>The last step of this <strong>OpenStreetMap (OSM)</strong> using <strong>osmdata R package</strong> tutorial is to save the map image created as a .png file, so we can print or distribute it.</p>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Output map file name "Valencia Albufera feshwater lagoon"</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="st">"Valencia_open_street_map"</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>width <span class="ot">=</span> <span class="dv">20</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>height <span class="ot">=</span> <span class="dv">40</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Save chart</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="fu">paste</span>(name,<span class="st">".png"</span>, <span class="at">sep =</span><span class="st">"_"</span>)),</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">device =</span> <span class="st">"png"</span>, <span class="at">width =</span> width, <span class="at">height =</span> height, <span class="at">units =</span> <span class="st">"cm"</span>, <span class="at">dpi =</span> <span class="st">"retina"</span>, <span class="at">bg =</span> <span class="st">"transparent"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>Script used to produce this map called “Valencia_street_map” can be found here:</p>
-<ul>
-<li><p>Valencia open street map: https://github.com/Pablo-source/Maps-in-R/tree/main/City_maps/Valencia_open_street_map.R</p></li>
-<li><p>Documentation created using Quarto: https://github.com/Pablo-source/Maps-in-R/blob/main/Documentation/Valencia_open_street_map.qmd</p></li>
-</ul>
-</section>
-<section id="references" class="level1">
-<h1>References</h1>
-<ul>
-<li>Open Street Map data website: https://rspatialdata.github.io/osm.html</li>
-<li>OSM osmdata package GitHub repo: https://github.com/ropensci/osmdata</li>
-<li>GGPLOT2 pacakge: https://ggplot2.tidyverse.org/</li>
-</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
