@@ -309,7 +309,7 @@ View(Albufera_multipolygons)
 
 - **MAP 04: Map including highway and road features, and also water features and l'Albufera lagoon as a new feature**
 
-# Set colour palette for l'Albufera map 
+- Set colour palette for l'Albufera map 
 
 ```{r Albufera colour palette}
 road_color <- '#1E212B'
@@ -349,7 +349,7 @@ This final step also includes making the map prettier by applying several theme 
 - Setup background colour
 - Set map margins
 
-# Set colour palette for VALENCIA OPEN STREET MAP
+- Set colour palette for VALENCIA OPEN STREET MAP
 
 ```{r Valencia open street map colour palette}
 road_color <- '#1E212B'
@@ -401,7 +401,7 @@ Valencia_city_map <- ggplot() +
 Valencia_city_map 
 ```
 
-Finally we save output map as a .png file to print it out. The default image width and height values can be changed to match a standard frame to hang it on the wall. 
+Finally we save output map as a .png file to print it out. The default image width and height values can be changed to match a standard frame to hang it on the wall as a city map poster. 
 
 ```{r Output png image parameters}
 name <- "Valencia_open_street_map"
