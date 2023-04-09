@@ -1,0 +1,7 @@
+---
+title: "About"
+---
+
+The first section I have included is called City_maps, where I
+explore how to build several city maps in R using OpenStreetMap (OSM)
+information with **osmdata** package. These maps are built by adding layers of geographical information onto them.

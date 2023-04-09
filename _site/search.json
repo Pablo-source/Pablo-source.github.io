@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Pablo-source.github.io",
+    "section": "",
+    "text": "This is my personal website. I will publish Quarto documents about Data Analysis, statistics, predictive modelling and maps created in R and Python.\nThe first section I have included is called City_maps, where I explore how to build several city maps in R using OpenStreetMap (OSM) information with osmdata package.\nThis is a Quarto website hosted on GitHub pages\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]
