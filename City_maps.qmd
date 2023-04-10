@@ -3,7 +3,7 @@ title: "City_maps"
 title-block-banner: true
 title-block-banner-color: cornflowerblue
 author: "Pablo Leon"
-date: "4/06/2023"
+date: "4/10/2023"
 format:
   html:
     toc: true
@@ -301,7 +301,7 @@ background_color <- "#D4B483"
 
 In this map below, we combine all previous features into one final map
 
--   **MAP 05: VALENCIA OPEN STREET MAP, ALL PREVIOUS FEATURES INCLUDED**
+-   **MAP 04: VALENCIA OPEN STREET MAP, ALL PREVIOUS FEATURES INCLUDED**
 
 ```{r Valencia city map}
 
@@ -352,4 +352,15 @@ ggsave(here::here(paste(name,".png", sep ="_")),
        device = "png", width = width, height = height, units = "cm", dpi = "retina", bg = "transparent")
 ```
 
+In coming weeks new city maps will be added to this section for the city of **The Hague**, Netherlands and **Birmingham**, UK. 
 
+## 5. Annex 
+
+- Valencia city map output image as .png file
+<https://github.com/Pablo-source/Maps-in-R/blob/main/City_maps/Valencia_open_street_map_.png>
+
+- Valencia city map R script
+<https://github.com/Pablo-source/Maps-in-R/blob/main/City_maps/Valencia_open_street_map.R>
+
+- Similar quarto document to the one used to build this website
+<https://github.com/Pablo-source/Maps-in-R/blob/main/Documentation/Quarto_markdown%20custom%20setup.qmd>

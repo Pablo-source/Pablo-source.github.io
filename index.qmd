@@ -2,11 +2,8 @@
 title: "Pablo-source.github.io"
 ---
 
-This is my personal website. I will publish Quarto documents about Data
-Analysis, statistics, predictive modelling and maps created in R and
-Python.
+This is my personal website. I will publish Quarto documents about Data Analysis, statistics, predictive modelling and maps created in R and Python.
 
 This is a Quarto website hosted on GitHub pages
 
-To learn more about Quarto websites visit
-<https://quarto.org/docs/websites>.
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
