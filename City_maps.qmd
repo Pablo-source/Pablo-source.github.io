@@ -3,7 +3,7 @@ title: "City_maps"
 title-block-banner: true
 title-block-banner-color: cornflowerblue
 author: "Pablo Leon"
-date: "4/10/2023"
+date: "4/14/2023"
 format:
   html:
     toc: true
@@ -20,51 +20,51 @@ library(tidyverse)
 
 ## Creating city maps using **osmdata** package
 
-This is a project to build maps with global open access mapping data using OSMDATA package in R.
+In this section, I will describe how to build maps for several cities aroud the world, using global open access mapping data from "osmdata" pacakge in R.
 
 <https://docs.ropensci.org/osmdata/articles/osmdata.html>.
 
-In the package website, they explain that working with open access map data, ensures transparent data provenance and ownership, allowing anyone to contribute, encouraging democratic decision making and citizen science. OSM is a global open access mapping project, which is free and open under the ODbL licence (OpenStreetMap contributors 2017)
+From the package website, they explain how working with open access map data, ensures transparent data provenance and ownership, allowing anyone to contribute, encouraging democratic decision making and citizen science. OSM is a global open access mapping project, which is free and open under the ODbL licence (OpenStreetMap contributors 2017)
 
 ## Working with vector data
 
-OpenStreetMap (OSM) project information can be accessed via overpassqueries using **osmdata** package in R. This package obtain OSM data from the overpass API, which is a read-only API that serves up custom selected parts of the the OSM map data.
+OpenStreetMap (OSM) project information can be accessed via overpass queries using **osmdata** package in R. This package obtains OSM data from the overpass API, which is a read-only API that serves up custom selected parts of the the OSM map data.
 
-## Install and load OSMDATA package from CRAN
+## Installing and loading OSMDATA package from CRAN
 
-To start working with Open OpenStreetMap package, install it from CRAN
+To start working with Open OpenStreetMap package, I first install it from CRAN
 
 ```{r install OpenStreetMap}
 # install.packages("osmdata",dependencies = TRUE)
 ```
 
-And then load it the usual way
+And then load it the usual way using pacman::p_load() function to load several libraries at once, pacman::p_load(here,tidyverse,osmdata,sf,showtext). This is a more efficient way of working with several R libraries.
 
 ```{r load osmdata}
 #| echo: false
 library(osmdata)
 ```
 
-From osmdata package we will use these functions to plot our map:
+These are the specific From osmdata package we will use these functions to plot our map:
 
 -   getbb(): Get bounding box for a given place name
 -   available_features(): List recognized features in OpenStreetMap(OSM)
 -   available_features(): List recognized features in OSM. This function returns a character vector of all known features
 -   available_tags(): List tags associated with a feature
 
-Once we know which features and tags we want to include in our map, we can start building the query to the API to retrieve these features
+Once I know which features to include in the map (buildings,roads,rivers,lagoons and bays), then I select the relevant tags that constitute the query we pass to the API to plot them using ggplot2. These are the set of osmdata functions used in this section:
 
 -   opq(): Build an Overpass query
 -   add_osm_feature(): Add a feature to an Overpass query. We specify the feature we want to plot and within that feature, we can also include a set of tags to be plotted in the map. As in the example below, we might want to plot **"highway"** feature in the map, so we include it in the Overpass query, but also we can specify other tags within that feature such as **""motorway","primary","secondary","tertiary","residential","living_street","unclassified"** as we can see in the Valencia city map example.
 -   osmdata_sf(): Return an OSM Overpass query as an osmdata object in sf format.
 
-The combination of the above three functions provides us with an object that ggplot() package can take in to create a map using the geom_sf() function.
+These three functions combined provides me with a gggplot2() object I can turn into a map using geom_sf() to handle shape files and polygons.
 
 In a nutshell, a sf object is a collection of simple features that includes attributes and geometries in the form of a data frame. It is a data frame (or tibble) with rows of features, columns of attributes, and a special geometry column that contains the spatial aspects of the features.
 
-For a further explantion about sf objects, please refer to Jesse Sadler website: \[sf objects\]<https://www.jessesadler.com/post/simple-feature-objects/#:~:text=At%20its%20most%20basic%2C%20an,spatial%20aspects%20of%20the%20features.>
+For a further explanation about sf objects, please refer to Jesse Sadler website: \[sf objects\]<https://www.jessesadler.com/post/simple-feature-objects/#:~:text=At%20its%20most%20basic%2C%20an,spatial%20aspects%20of%20the%20features.>
 
-Load also extra libraries for data wrangling and to create plots
+Then I load some extra libraries for data wrangling and to create plots
 
 ```{r load required libraries}
 pacman::p_load(here,tidyverse,osmdata,sf,showtext)
@@ -85,28 +85,34 @@ getbb("Valencia Spain")
 
 ```
 
-## 1. Select your reagion and add one feature
+## 1. Add first feature to the OpenStreet map
 
-Now that I want to plot a map of Valencia I need to choose which features do I want to plot. Each feature is defined by a key and each key is sub-divided into further values.
+When creating a map of Valencia, it's important to decide which features to include. In OpenStreetMap, each feature is identified by a key, which is then further subdivided into values.
 
-For example, if I want to start plotting *roads* or highways into my map, I need to first identify how roads are defined in osmdata package. For that we use available_features() function to choose different roads or transportation routes defined in the map
+To plot roads or highways on the map, we first need to identify how these features are defined in the osmdata package. We can do this by using the available_features() function to select different types of roads or transportation routes defined in the map.
+
+Once we have chosen the desired features, we can add them to our map along with other layers to create a comprehensive and informative representation of Valencia.
 
 ```{r display features}
 # Not run as there are more than 250 elements
 # available_features()
 ```
 
-From the above list of features I can see "highway" as available key, so now I need to know which specific values are linked to that key. For tha I will use available_tags() function, to find out which values are related to the key "highway"
+Looking at the list of available features, I can see that "highway" is one of the keys that I can use to plot transportation routes on my map of Valencia. However, I need to determine which specific values are associated with this key.
+
+To do this, I can use the available_tags() function to identify the values that are related to the "highway" key. By selecting the appropriate values for the key, I can customize the map to display the types of transportation routes that are most relevant to my needs."
 
 ```{r get values tags for highway key}
 available_tags("highway")
 ```
 
-As I want to start by plotting the main roads in the city of Valencia, i will choose a handful of the above tags: motorway, primary, secondary, tertiary,residential,living_street, unclassified.
+I plan to begin by mapping the primary roads in Valencia. To do this, I will select a few key tags from the list, such as motorway, primary, secondary, tertiary,residential,living_street, unclassified.
 
-## 2. Choosing elements for map first layer
+## 2. Choose elements to be included on the first layer of the map
 
-We name each layer with the key and values we want to plot in the map. So for this first example, I want to see several types of roads in the region of Valencia
+Roads and highways are the first set of elements to be included on my map of Valencia. Displaying transportation routes in the city but also through its metropolitan area. From the previous available_tags() function, I choose "highway" as the appropriate value for this key.
+
+This allows me to display different types of transportation types such as motorways, primary, secondary, and tertiary roads as well as motorways on the map.
 
 ```{r Map layer 01 roads}
 # MAP LAYER 01: roads  
@@ -119,17 +125,17 @@ roads <- getbb("Valencia Spain") %>%
 roads
 ```
 
-## 3. Building maps in layers by adding natural and urban features
+## 3. Adding natural and urban features to the map
 
 ### 3.1 Initial Valencia city map showing roads and highways
 
-Using ggplot2, we use the sf cartographic object we queried from the OpenMap API, mapping several sf objects via ggplot2 and geom_sf() functions.
+In r, I use the sf cartographic object I obtained from our OpenMap API query, mapping several sf objects via ggplot2 and geom_sf() functions.
 
-Also, It is in this step where we make use of getbb("Valencia Spain") function, to ensure the features we match the specific latitude and longitude of the city we want to plot.
+Also, using getbb("Valencia Spain") function, I ensure the features we display on the map macth the city latitude and longitude I want to plot.
 
-We have created so far just one geom_sf() object, we include it within the ggplot() function alongside the lat and long coordinated of Valencia.
+So far I have created just one geom_sf() object, embedded insite the ggplot() function, alongside the lat and long values for the city of Valencia.
 
-Prior to producing the final map, we define the color palette for each new feature
+Prior to producing the final map, I define the colour palette for each new feature,
 
 ```{r map  roads color palette}
 # Remember to enclose Hexadecimal colors in apostrophes 
@@ -137,7 +143,7 @@ road_color <- '#000000'
 coastline_color <- '#000000'
 ```
 
-Then we can combine all previous scripts to create our first map
+Then I can combine all previous scripts to create the first output map:
 
 -   **MAP 01: Create a standard ggplot() object using geom_sf() and osm features defined as roads**
 
@@ -154,16 +160,16 @@ Valencia_roads_map <- ggplot() +
 Valencia_roads_map
 ```
 
-### 3.2 Valencia city map including roads and coastline and also adding coastline features
+### 3.2 Valencia city displaying roads and streets plus coastline features
 
-Now we add a new layer to the previous map, including natural water features such as bays beaches, dunes and coastline.
+Now I have added a new layer to the previous map, including beaches, dunes, bays and coastline natural water features.
 
 ```{r natural tag}
 available_tags("natural")
 
 ```
 
-Among all possible natural tags, we choose those related to coastline and seafront features such as beaches and bays
+These are the set of elements I will include in the map enclosed in the concatenate c() function below: "bay","water","beach","wetland","dune", "coastline" all these are coastline and water related map features.
 
 ```{r Valencia coastline}
 Vlc_coastline <- getbb("Valencia Spain") %>% 
@@ -174,15 +180,15 @@ Vlc_coastline <- getbb("Valencia Spain") %>%
 Vlc_coastline
 ```
 
--   In order to display the Valencian bay opposite the city seafront we have to define it as a multipolygon object
+-   To display the Valencian Bay in blue colour next to the city seafront I define it as a multipolygon object
 
 ```{r Valencia coastline multipolygons}
 Vlc_coastline_multipolygons <- Vlc_coastline$osm_multipolygons
 ```
 
--   Roads features are defined as lines whilst coastline and water features are defined as polygons
+-   Roads features are defined as lines whilst coastline and water features are defined as multipolygons
 
--   **MAP 02: This is a new map combining roads and coastline layers**
+-   **MAP 02: Map combining roads and coastline layers**
 
 -   Set colour palette for road and coastline features
 
@@ -213,7 +219,7 @@ Valencia_coastline_map
 
 ### 3.3 New Water bodies features added to Valencia city map
 
--   We want to include the sea and different water bodies such as reservoirs and natural lagoons in the map. South of Valencia city there is fresh water lagoon called "La Albufera" we want to display it in hues of blue colors.
+-   I want to include reservoirs and natural lagoons in the map. South of Valencia city there is freshwater lagoon called "La Albufera" I will include them in the map using shades of blue colour.
 
 ```{r Valencia sea and river}
 Vlc_water <- getbb("Valencia Spain") %>% 
@@ -228,14 +234,14 @@ Vlc_sea <- getbb("Valencia Spain") %>%
   osmdata_sf()
 ```
 
--   To display these water features in the map, we define them as multipolygon objects
+-   To display these water features in the map, I define them as multipolygon objects
 
 ```{r Sea and water as multypolygons}
 Vlc_water_multipolygons <- Vlc_water$osm_multipolygons
 Vlc_sea_multipolygons <- Vlc_sea$osm_multipolygons
 ```
 
--   **MAP 03: Map including these new water features (we build them on the previous road and highways features included on previous steps)**
+-   **MAP 03: Map including these new water bodies on top of previous road and highways features**
 
 ```{r Valencia sea and river colour palette}
 # Set colour palette for water features 
@@ -279,13 +285,13 @@ Valencia_waterways_map
 
 ```
 
-## 4. VALENCIA OPEN STREET MAP (including all previous features)
+## 4. VALENCIA OPEN STREET MAP
 
-#### 4.1 Combining all features into a single map and applying specific Theme
+#### 4.1 Combining all features into a final output map
 
-Now that we have defined several features to be plotted in our map (roads,coastline,waterways and rivers), we can combine them all into an output map. Again we add each of these feature using the geom_sf() function.
+After defining several features to be plotted in the map (roads,coastline,waterways and rivers), I combine them as ggplot2 plot layers. To finally create one single ggplot2 image output as a .png file.
 
-This final step also includes making the map prettier by applying several theme options and adding a background colour to the map as well as Title and Subtitle: - Include Map title and subtitle - Setup background colour - Set map margins
+This final step also includes enhancing the map appearance by applying several theme options, adding background colour and Title and Subtitle to the output map.
 
 -   Set colour palette for VALENCIA OPEN STREET MAP
 
@@ -299,9 +305,9 @@ font_color <-'#D2691E'
 background_color <- "#D4B483"
 ```
 
-In this map below, we combine all previous features into one final map
+Themed and formatted final output map of Valencia city
 
--   **MAP 04: VALENCIA OPEN STREET MAP, ALL PREVIOUS FEATURES INCLUDED**
+-   **MAP 04: VALENCIA OPEN STREET MAP**
 
 ```{r Valencia city map}
 
@@ -337,7 +343,7 @@ Valencia_city_map <- ggplot() +
 Valencia_city_map 
 ```
 
-Finally we save output map as a .png file to print it out. The default image width and height values can be changed to match a standard frame to hang it on the wall as a city map poster.
+The default image width and height values can be changed to match a standard frame to hang it on the wall as a city map poster.
 
 ```{r Output png image parameters}
 name <- "Valencia_open_street_map"
@@ -352,15 +358,12 @@ ggsave(here::here(paste(name,".png", sep ="_")),
        device = "png", width = width, height = height, units = "cm", dpi = "retina", bg = "transparent")
 ```
 
-In coming weeks new city maps will be added to this section for the city of **The Hague**, Netherlands and **Birmingham**, UK. 
+In coming weeks new city maps of **The Hague**, Netherlands and **Birmingham**, UK will be added to this section.
 
-## 5. Annex 
+## 5. Annex
 
-- Valencia city map output image as .png file
-<https://github.com/Pablo-source/Maps-in-R/blob/main/City_maps/Valencia_open_street_map_.png>
+-   Valencia city map output image as .png file <https://github.com/Pablo-source/Maps-in-R/blob/main/City_maps/Valencia_open_street_map_.png>
 
-- Valencia city map R script
-<https://github.com/Pablo-source/Maps-in-R/blob/main/City_maps/Valencia_open_street_map.R>
+-   Valencia city map R script <https://github.com/Pablo-source/Maps-in-R/blob/main/City_maps/Valencia_open_street_map.R>
 
-- Similar quarto document to the one used to build this website
-<https://github.com/Pablo-source/Maps-in-R/blob/main/Documentation/Quarto_markdown%20custom%20setup.qmd>
+-   Similar quarto document to the one used to build this website <https://github.com/Pablo-source/Maps-in-R/blob/main/Documentation/Quarto_markdown%20custom%20setup.qmd>
