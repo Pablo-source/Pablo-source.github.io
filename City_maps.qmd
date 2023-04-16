@@ -3,7 +3,7 @@ title: "City_maps"
 title-block-banner: true
 title-block-banner-color: cornflowerblue
 author: "Pablo Leon"
-date: "4/14/2023"
+date: "`r Sys.Date()`"
 format:
   html:
     toc: true
@@ -20,7 +20,7 @@ library(tidyverse)
 
 ## Creating city maps using **osmdata** package
 
-In this section, I will describe how to build maps for several cities aroud the world, using global open access mapping data from "osmdata" pacakge in R.
+In this section, I will describe how to build maps for several cities around the world, using global open access mapping data from "osmdata" pacakge in R.
 
 <https://docs.ropensci.org/osmdata/articles/osmdata.html>.
 
@@ -307,7 +307,7 @@ background_color <- "#D4B483"
 
 Themed and formatted final output map of Valencia city
 
--   **MAP 04: VALENCIA OPEN STREET MAP**
+-   **MAP 04: Valencia city map**
 
 ```{r Valencia city map}
 
