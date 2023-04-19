@@ -9,7 +9,8 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - City_maps.qmd 
+      - City_maps.qmd
+      - Resources.qmd
 
 format:
   html:
