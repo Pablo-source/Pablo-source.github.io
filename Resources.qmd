@@ -1,4 +1,155 @@
 ---
 title: "Resources"
+title-block-banner: true
+title-block-banner-color: lightsteelblue1
 author: "Pablo-Leon"
+date: "`r Sys.Date()`"
+format: 
+  html: 
+    toc: true
+    html-math-method: katex
+    code-fold: true
+    editor: source
 ---
+
+```{r markdown custom style, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
+                      dpi = 180, fig.width = 8, fig.height = 5)
+library(tidyverse) 
+```
+
+## R
+
+Set of resources about R
+
+R is an open-source programming language that is widely used among statisticians and data scientists in the NHS. R has a large number of built-in functions and packages for statistical analysis and data visualisation. Along with tools such as Python1, R can be used to develop so-called reproducible analytical pipelines (RAP).
+
+- The R Project for Statistical Computing <https://www.r-project.org/> 
+
+
+## POSIT
+
+Posit is the Company  who developed RStudio IDE among other products, previously called RStudio. All your data products have a home on Posit Connect, Deploy R & Python content easily and securely, automate code execution and deliver insights to stakeholders that need them
+
+- Posit website: <https://posit.co/>
+
+
+### POSIT learning resources
+
+Learning materials from POSIT about R, Python and Quarto
+
+- Blogs: <https://posit.co/blog/>
+- Cheat sheets: <https://posit.co/resources/cheatsheets/>
+- Videos: <https://posit.co/resources/videos/>
+
+
+## QUARTO
+
+An Open-source scientific and technical publishing system, available for R, Python and Julia.
+
+- Quarto website: <https://quarto.org>
+
+Get started with Quarto
+
+- Install Quarto: <https://quarto.org/docs/get-started/> 
+
+Authoring Quarto documents
+
+Quarto tutorial – Authoring: <https://quarto.org/docs/get-started/authoring/rstudio.html>
+
+- Include formatted title blocks at the start of the article: <https://quarto.org/docs/authoring/title-blocks.html>
+
+- Quarto themes:
+Lumen: <https://bootswatch.com/lumen/>
+Journal: <https://bootswatch.com/journal/>
+Cosmo: <https://bootswatch.com/cosmo/>
+Sandstone: <https://bootswatch.com/sandstone/>
+Spacelab: <https://bootswatch.com/spacelab/>
+Slate:<https://bootswatch.com/slate/>
+
+- Update Quarto documents header date date automatically: <https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html> 
+
+
+### Creating websites using Quarto
+
+- A couple of resources on how to build a Quarto website:
+
+- Creating it: Creating a Quarto website - YouTube: <https://www.youtube.com/watch?v=_bglTCjgcqY>
+- Publishing it to GitHub: Publishing a Quarto website through GitHub pages - YouTube: <https://www.youtube.com/watch?v=uimdXPZc40I>
+- Changing a Quarto website’s output directory: <https://www.youtube.com/watch?v=ZkcY9YQ3iLY>
+
+
+## RStudio
+
+RStudio IDE to run R, developed by RStudio now POSIT
+
+- RStudio IDE: <https://posit.co/products/open-source/rstudio/>
+
+
+## Python
+
+Python main website
+
+- Python: <https://www.python.org/>
+
+Python coding topics and data structures
+
+- Dictionaries: <https://python.land/things-you-didnt-know-about-python-dictionaries>
+
+
+## NHS R and Python communities of practise
+
+## NHS-R Community
+
+Together we aim to promote the use of R in the NHS: <https://nhsrcommunity.com/>
+Wider NHS-R community pages and resources, includes links to a number of recorded sessions and training, all based on NHS datasets
+
+### NHS-R Events
+
+1. Conferences
+- Upcoming conferences: <https://nhsrcommunity.com/events/#event_type-conferences>
+- Show Past Events: <https://nhsrcommunity.com/past-events/>
+- **NHS-R Community Conference 2022**: <https://nhsrcommunity.com/events/nhs-r-community-conference-2022/>
+
+2. Group Discussions
+
+- Webinars: <https://nhsrcommunity.com/events/#event_type-webinars>
+- Workshops: <https://nhsrcommunity.com/events/#event_type-workshops>
+
+
+## NHSE-R
+
+Welcome to the NHS England R community documentation site
+The NHS England R Community is not intended to replace any other R user groups - there’s a fantastic national NHS-R Community and lots of local sharing of R work, we want to use this site to signpost to other resources for those specifically using R within NHS England.
+
+NHSE-R: <https://nhsengland.github.io/nhs-r-reporting>
+
+NHS England R Community Future NHS: <https://future.nhs.uk/NHSERcommunity>
+
+Reproducible Analytical Pipelines (RAP): <https://nhsengland.github.io/nhs-r-reporting/tutorials/rap.html>
+
+
+## NHSD- RAP Community of Practice
+
+RAP Community of practice: <https://nhsdigital.github.io/rap-community-of-practice/>
+Basic Python data analysis operations: <https://nhsdigital.github.io/rap-community-of-practice/training_resources/python/basic-python-data-analysis-operations/>
+
+
+## NHS-Python
+
+Python community to promote the use of Python in the NHS.They organize forums, tutorials and coding sessions:
+
+The Python Community for Healthcare: <https://nhs-pycom.net/>
+
+
+## Code editors
+
+
+Pycharm: <https://www.jetbrains.com/pycharm/download/#section=windows>
+RStudio: <https://posit.co/download/rstudio-desktop/>
+VStudio code: <https://code.visualstudio.com/>
+
+How To Run Selected Lines In VS Code (Visual Studio Code) – YouTube: < https://www.youtube.com/watch?v=VXJChVF28jw>
+
+
+
