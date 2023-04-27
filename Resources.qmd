@@ -113,7 +113,10 @@ Wider NHS-R community pages and resources, includes links to a number of recorde
 
 2. Group Discussions
 
+3. Group Discussions/workshops
 - Webinars: <https://nhsrcommunity.com/events/#event_type-webinars>
+
+4. Workshops
 - Workshops: <https://nhsrcommunity.com/events/#event_type-workshops>
 
 
