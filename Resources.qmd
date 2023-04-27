@@ -18,9 +18,17 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
 library(tidyverse) 
 ```
 
-## R
 
-Set of resources about R
+## Index
+
+- R and R Eco-system resources
+- R tips
+- Python tips 
+- NHS R and Python communities of practice
+- R and Python online books
+
+
+## R
 
 R is an open-source programming language that is widely used among statisticians and data scientists in the NHS. R has a large number of built-in functions and packages for statistical analysis and data visualisation. Along with tools such as Python1, R can be used to develop so-called reproducible analytical pipelines (RAP).
 
@@ -112,12 +120,21 @@ Wider NHS-R community pages and resources, includes links to a number of recorde
 - **NHS-R Community Conference 2022**: <https://nhsrcommunity.com/events/nhs-r-community-conference-2022/>
 
 2. Group Discussions
+- Group Discussions: <https://nhsrcommunity.com/events/#event_type-group-discussion>
 
 3. Group Discussions/workshops
+- Webinars: <https://nhsrcommunity.com/events/#event_type-group-discussionworkshops>
+
+4. Webinars
 - Webinars: <https://nhsrcommunity.com/events/#event_type-webinars>
 
 4. Workshops
 - Workshops: <https://nhsrcommunity.com/events/#event_type-workshops>
+
+4.1 Upcoming workshops
+- NHS-R Workshop: Introduction to R and RStudio – 11th May 2023: <https://nhsrcommunity.com/events/nhs-r-workshop-introduction-to-r-and-r-studio-11th-may-2023/>
+
+- NHS-R Workshop: Forecasting Using R – Advanced Methods – May 2023: <https://nhsrcommunity.com/events/nhs-r-workshop-forecasting-using-r-advanced-methods-may-2023/>
 
 
 ## NHSE-R
@@ -125,34 +142,113 @@ Wider NHS-R community pages and resources, includes links to a number of recorde
 Welcome to the NHS England R community documentation site
 The NHS England R Community is not intended to replace any other R user groups - there’s a fantastic national NHS-R Community and lots of local sharing of R work, we want to use this site to signpost to other resources for those specifically using R within NHS England.
 
-NHSE-R: <https://nhsengland.github.io/nhs-r-reporting>
+- NHSE-R: <https://nhsengland.github.io/nhs-r-reporting>
 
-NHS England R Community Future NHS: <https://future.nhs.uk/NHSERcommunity>
+- NHS England R Community Future NHS: <https://future.nhs.uk/NHSERcommunity>
 
-Reproducible Analytical Pipelines (RAP): <https://nhsengland.github.io/nhs-r-reporting/tutorials/rap.html>
+- Reproducible Analytical Pipelines (RAP): <https://nhsengland.github.io/nhs-r-reporting/tutorials/rap.html>
 
 
 ## NHSD- RAP Community of Practice
 
 RAP Community of practice: <https://nhsdigital.github.io/rap-community-of-practice/>
-Basic Python data analysis operations: <https://nhsdigital.github.io/rap-community-of-practice/training_resources/python/basic-python-data-analysis-operations/>
+
+- Basic Python data analysis operations: <https://nhsdigital.github.io/rap-community-of-practice/training_resources/python/basic-python-data-analysis-operations/>
 
 
 ## NHS-Python
 
 Python community to promote the use of Python in the NHS.They organize forums, tutorials and coding sessions:
 
-The Python Community for Healthcare: <https://nhs-pycom.net/>
+- The Python Community for Healthcare: <https://nhs-pycom.net/>
 
 
 ## Code editors
 
+- Pycharm: <https://www.jetbrains.com/pycharm/download/#section=windows>
 
-Pycharm: <https://www.jetbrains.com/pycharm/download/#section=windows>
-RStudio: <https://posit.co/download/rstudio-desktop/>
-VStudio code: <https://code.visualstudio.com/>
+- RStudio: <https://posit.co/download/rstudio-desktop/>
 
-How To Run Selected Lines In VS Code (Visual Studio Code) – YouTube: < https://www.youtube.com/watch?v=VXJChVF28jw>
+- VStudio code: <https://code.visualstudio.com/>
+
+- How To Run Selected Lines In VS Code (Visual Studio Code) – YouTube: <https://www.youtube.com/watch?v=VXJChVF28jw>
+
+
+## Python tips
+
+- Python Beginners Guide: <https://wiki.python.org/moin/BeginnersGuide/Programmers>
+
+- The Python Tutorial: <https://docs.python.org/3/tutorial/index.html>
+
+- The 30 Best Python Libraries and Packages for Beginners: <https://www.ubuntupit.com/best-python-libraries-and-packages-for-beginners/>
+
+- What is os.listdir() in python?: <https://www.educative.io/answers/what-is-oslistdir-in-python>
+
+- Get unique values from a column in Pandas DataFrame – GeeksforGeeks: <https://www.geeksforgeeks.org/get-unique-values-from-a-column-in-pandas-dataframe/>
+
+- Python String format(): <https://www.programiz.com/python-programming/methods/string/format>
+
+- Python - Determine the type of an object? - Stack Overflow: <https://stackoverflow.com/questions/2225038/determine-the-type-of-an-object>
+
+- Get / check the type of an object in Python: type(), isinstance(): <https://note.nkmk.me/en/python-type-isinstance/>
+
+- Create pandas dataframe from lists using zip – GeeksforGeeks: <https://www.geeksforgeeks.org/create-pandas-dataframe-from-lists-using-zip/?ref=rp>
+
+- Unit Testing for Data Scientists. Using Pytest to improve the stability: <https://towardsdatascience.com/unit-testing-for-data-scientists-dc5e0cd397fb>
+
+- The Python Tutorial: <https://docs.python.org/3/tutorial/index.html#tutorial-index>
+
+
+## R tips
+
+- R Colors: <https://www.r-bloggers.com/2012/10/palettes-in-r/>
+
+- R colors resource: <https://r-charts.com/colors/> 
+
+- R colors chart: <https://rstudio-pubs-static.s3.amazonaws.com/3486_79191ad32cf74955b4502b8530aad627.html>
+
+- R chart annotations: <https://ggplot2-book.org/annotations.html>
+
+- R Camcoder package: <https://github.com/thebioengineer/camcorder>
+
+- Camcoder package in CRAN: <https://cran.r-project.org/web/packages/camcorder/index.html>
+
+- Create design process animations: <https://cran.r-project.org/web/packages/camcorder/vignettes/camcorder_record.html>
+
+- HTML widgets – useful for Shiny and Markdown reports: <https://www.htmlwidgets.org/>
+
+- Crosstalk to join some widgets together: <https://rstudio.github.io/crosstalk/using.html>
+
+- R Graph Gallery: <https://r-graph-gallery.com/>
+
+- Interactive maps in R using Leaflet: <https://rstudio.github.io/leaflet/>
+
+- Interactive maps in R using Leaflet: <https://rstudio.github.io/leaflet/colors.html>
+
+- Basic intro to main axis and legend titles: <http://www.sthda.com/english/wiki/ggplot2-title-main-axis-and-legend-titles> 
+
+- Setting up the R environment: <https://ohdsi.github.io/Hades/rSetup.html>
+
+- How to do fuzzy matching in R: <https://stylizeddata.com/how-to-do-fuzzy-matching-in-r/>
+
+- How to Recode Factor and Character Variables in R: <https://stylizeddata.com/how-to-recode-factor-and-character-variables-in-r/>
+
+- Designing aesthetic and publication ready tables in R: <https://github.com/kcuilla/fourth_down_go_rates>
+
+- How to Recode Factor and Character Variables in R: <https://stylizeddata.com/how-to-recode-factor-and-character-variables-in-r/>
+
+- Driving a web browser with RSelenium: <https://www.computerworld.com/article/2971265/how-to-drive-a-web-browser-with-r-and-rselenium.html>
+
+
+## Online R and Python books 
+
+- An introduction to R - Alex Douglas, Deon Roos, Francesca Mancini, Ana Couto & David Lusseau: <https://intro2r.com/>
+
+- Welcome to R for Data Science - Hadley Wickham, Garrett Grolemund: <https://r4ds.had.co.nz/>
+
+- Think Python -How to Think Like a Computer Scientist - Alllen B. Downey: <https://greenteapress.com/thinkpython2/html/index.html>
+
+- Ggplot2 Elegant Graphics for Data Analysis - Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen: <https://ggplot2-book.org/index.html>
 
 
 
