@@ -239,6 +239,20 @@ Python community to promote the use of Python in the NHS.They organize forums, t
 
 - Driving a web browser with RSelenium: <https://www.computerworld.com/article/2971265/how-to-drive-a-web-browser-with-r-and-rselenium.html>
 
+## Maps in R using ggplot2 and OSM
+
+- An introduction to plotting maps in R using ggplot2 An introduction to plotting maps in R using ggplot2 can be found on this online book: 
+<https://ggplot2-book.org/maps.html>
+
+-  OpenStreetMap (OSM)
+Package details: <https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html> 
+
+- OpenStreepMap. OSM is a global open access mapping project, which is free and open under the ODbL licence (OpenStreetMap contributors 2017: 
+<https://www.openstreetmap.org/#map=6/54.910/-3.432>
+
+
+
+
 
 ## Online R and Python books 
 
