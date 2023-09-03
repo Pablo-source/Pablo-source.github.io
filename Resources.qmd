@@ -242,6 +242,60 @@ Python community to promote the use of Python in the NHS.They organize forums, t
 - Driving a web browser with RSelenium: <https://www.computerworld.com/article/2971265/how-to-drive-a-web-browser-with-r-and-rselenium.html>
 
 
+## R Tidyverse universe
+
+This section contains set of packages that follow Tidyverse data science principles.
+
+### tidyverse 
+
+The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.
+
+The goal of tidyr is to help you create tidy data. Tidy data is data where:
+1. Every column is variable.
+2. Every row is an observation.
+3. Every cell is a single value.
+
+- Tidyverse main website: <https://www.tidyverse.org/>
+
+Core Tidyverse packages:
+
+- ggplot2: <https://ggplot2.tidyverse.org/>
+- dplyr: <https://dplyr.tidyverse.org/>
+- tidyr: <https://tidyr.tidyverse.org/>
+- readr: <https://readr.tidyverse.org/>
+- purrr: <https://purrr.tidyverse.org/>
+- tibble: <https://tibble.tidyverse.org/>
+- stringr: <https://stringr.tidyverse.org/>
+- forcats: <https://forcats.tidyverse.org/>
+
+
+### Related Tidyverse packages
+
+#### dbplyr
+
+dbplyr is the database backend for dplyr. It allows you to use remote database tables as if they are in-memory data frames by automatically converting dplyr code into SQL.
+
+- DBPLYR <https://dbplyr.tidyverse.org/>
+
+
+Using function 'show_query()' after a set of DPLYR verbs, allows you to generate the SQL that is sent tot he database when you request the data.
+
+
+#### tidyselect
+
+Tools like starts_with() or contains() are called selection helpers. These tools inspect the variable names currently available for selection with peek_vars(). The variable names are registered automatically by eval_select() for the duration of the evaluation:
+
+These selection helpers match variables according to a given pattern
+
+starts_with() : Starts with an exact prefix.
+ends_with() : Ends with an exact suffix.
+contains() : Contains a literal string.
+matches() : Matches a regular expression.
+num_range() : Matches a numerical range like x01, x02, x03.
+
+Tidyselect website: <https://www.tidyverse.org/blog/2022/10/tidyselect-1-2-0/>
+
+
 ## Maps in R using ggplot2 and OSM
 
 - An introduction to plotting maps in R using ggplot2 An introduction to plotting maps in R using ggplot2 can be found on this online book: 
@@ -269,4 +323,35 @@ Package details: <https://cran.r-project.org/web/packages/osmdata/vignettes/osmd
 - Geocomputation with R: <https://bookdown.org/robinlovelace/geocompr/spatial-class.html>
 
 - Chapter 16. Geospatial- The Big book of r: <https://www.bigbookofr.com/geospatial.html>
+
+## Statistics
+
+### Probability distributions
+
+Probability distributions in R: <https://poissonisfish.com/2016/12/04/probability-distributions-in-r/>
+
+Bayesian models in R:
+<https://www.r-bloggers.com/2019/05/bayesian-models-in-r-2/>
+
+## Tables in R
+
+Set of R packages to build beautiful Data Tables in R
+
+- gt (Easily Create Presentation-Ready Display Tables): <https://gt.rstudio.com/> 
+
+- formattable (produce data structures with formatting rules): <https://renkun-ken.github.io/formattable/>
+
+- kableExtra (Extend kable tables functionality): <https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html>
+
+- db (Interesting DT Package introduction from Yihui Xie website: <https://rstudio.github.io/DT/>
+
+- flextable (Framework for creating tables for reporting and publications): <https://ardata-fr.github.io/flextable-book/>
+
+- reactablefmtr (formatting tables using the reactable R library.): <https://kcuilla.github.io/reactablefmtr/index.html>
+
+### POSIT Community Table Gallery
+
+POSIT Community Table Gallery: <https://community.rstudio.com/c/table-gallery/64>
+
+
 

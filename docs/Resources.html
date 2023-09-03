@@ -181,8 +181,21 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#code-editors" id="toc-code-editors" class="nav-link" data-scroll-target="#code-editors">Code editors</a></li>
   <li><a href="#python-tips" id="toc-python-tips" class="nav-link" data-scroll-target="#python-tips">Python tips</a></li>
   <li><a href="#r-tips" id="toc-r-tips" class="nav-link" data-scroll-target="#r-tips">R tips</a></li>
+  <li><a href="#r-tidyverse-universe" id="toc-r-tidyverse-universe" class="nav-link" data-scroll-target="#r-tidyverse-universe">R Tidyverse universe</a>
+  <ul class="collapse">
+  <li><a href="#tidyverse" id="toc-tidyverse" class="nav-link" data-scroll-target="#tidyverse">tidyverse</a></li>
+  <li><a href="#related-tidyverse-packages" id="toc-related-tidyverse-packages" class="nav-link" data-scroll-target="#related-tidyverse-packages">Related Tidyverse packages</a></li>
+  </ul></li>
   <li><a href="#maps-in-r-using-ggplot2-and-osm" id="toc-maps-in-r-using-ggplot2-and-osm" class="nav-link" data-scroll-target="#maps-in-r-using-ggplot2-and-osm">Maps in R using ggplot2 and OSM</a></li>
   <li><a href="#online-r-and-python-books" id="toc-online-r-and-python-books" class="nav-link" data-scroll-target="#online-r-and-python-books">Online R and Python books</a></li>
+  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics">Statistics</a>
+  <ul class="collapse">
+  <li><a href="#probability-distributions" id="toc-probability-distributions" class="nav-link" data-scroll-target="#probability-distributions">Probability distributions</a></li>
+  </ul></li>
+  <li><a href="#tables-in-r" id="toc-tables-in-r" class="nav-link" data-scroll-target="#tables-in-r">Tables in R</a>
+  <ul class="collapse">
+  <li><a href="#posit-community-table-gallery" id="toc-posit-community-table-gallery" class="nav-link" data-scroll-target="#posit-community-table-gallery">POSIT Community Table Gallery</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -388,6 +401,47 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Driving a web browser with RSelenium: <a href="https://www.computerworld.com/article/2971265/how-to-drive-a-web-browser-with-r-and-rselenium.html" class="uri">https://www.computerworld.com/article/2971265/how-to-drive-a-web-browser-with-r-and-rselenium.html</a></p></li>
 </ul>
 </section>
+<section id="r-tidyverse-universe" class="level2">
+<h2 class="anchored" data-anchor-id="r-tidyverse-universe">R Tidyverse universe</h2>
+<p>This section contains set of packages that follow Tidyverse data science principles.</p>
+<section id="tidyverse" class="level3">
+<h3 class="anchored" data-anchor-id="tidyverse">tidyverse</h3>
+<p>The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.</p>
+<p>The goal of tidyr is to help you create tidy data. Tidy data is data where: 1. Every column is variable. 2. Every row is an observation. 3. Every cell is a single value.</p>
+<ul>
+<li>Tidyverse main website: <a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a></li>
+</ul>
+<p>Core Tidyverse packages:</p>
+<ul>
+<li>ggplot2: <a href="https://ggplot2.tidyverse.org/" class="uri">https://ggplot2.tidyverse.org/</a></li>
+<li>dplyr: <a href="https://dplyr.tidyverse.org/" class="uri">https://dplyr.tidyverse.org/</a></li>
+<li>tidyr: <a href="https://tidyr.tidyverse.org/" class="uri">https://tidyr.tidyverse.org/</a></li>
+<li>readr: <a href="https://readr.tidyverse.org/" class="uri">https://readr.tidyverse.org/</a></li>
+<li>purrr: <a href="https://purrr.tidyverse.org/" class="uri">https://purrr.tidyverse.org/</a></li>
+<li>tibble: <a href="https://tibble.tidyverse.org/" class="uri">https://tibble.tidyverse.org/</a></li>
+<li>stringr: <a href="https://stringr.tidyverse.org/" class="uri">https://stringr.tidyverse.org/</a></li>
+<li>forcats: <a href="https://forcats.tidyverse.org/" class="uri">https://forcats.tidyverse.org/</a></li>
+</ul>
+</section>
+<section id="related-tidyverse-packages" class="level3">
+<h3 class="anchored" data-anchor-id="related-tidyverse-packages">Related Tidyverse packages</h3>
+<section id="dbplyr" class="level4">
+<h4 class="anchored" data-anchor-id="dbplyr">dbplyr</h4>
+<p>dbplyr is the database backend for dplyr. It allows you to use remote database tables as if they are in-memory data frames by automatically converting dplyr code into SQL.</p>
+<ul>
+<li>DBPLYR <a href="https://dbplyr.tidyverse.org/" class="uri">https://dbplyr.tidyverse.org/</a></li>
+</ul>
+<p>Using function ‘show_query()’ after a set of DPLYR verbs, allows you to generate the SQL that is sent tot he database when you request the data.</p>
+</section>
+<section id="tidyselect" class="level4">
+<h4 class="anchored" data-anchor-id="tidyselect">tidyselect</h4>
+<p>Tools like starts_with() or contains() are called selection helpers. These tools inspect the variable names currently available for selection with peek_vars(). The variable names are registered automatically by eval_select() for the duration of the evaluation:</p>
+<p>These selection helpers match variables according to a given pattern</p>
+<p>starts_with() : Starts with an exact prefix. ends_with() : Ends with an exact suffix. contains() : Contains a literal string. matches() : Matches a regular expression. num_range() : Matches a numerical range like x01, x02, x03.</p>
+<p>Tidyselect website: <a href="https://www.tidyverse.org/blog/2022/10/tidyselect-1-2-0/" class="uri">https://www.tidyverse.org/blog/2022/10/tidyselect-1-2-0/</a></p>
+</section>
+</section>
+</section>
 <section id="maps-in-r-using-ggplot2-and-osm" class="level2">
 <h2 class="anchored" data-anchor-id="maps-in-r-using-ggplot2-and-osm">Maps in R using ggplot2 and OSM</h2>
 <ul>
@@ -407,8 +461,32 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Geocomputation with R: <a href="https://bookdown.org/robinlovelace/geocompr/spatial-class.html" class="uri">https://bookdown.org/robinlovelace/geocompr/spatial-class.html</a></p></li>
 <li><p>Chapter 16. Geospatial- The Big book of r: <a href="https://www.bigbookofr.com/geospatial.html" class="uri">https://www.bigbookofr.com/geospatial.html</a></p></li>
 </ul>
+</section>
+<section id="statistics" class="level2">
+<h2 class="anchored" data-anchor-id="statistics">Statistics</h2>
+<section id="probability-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="probability-distributions">Probability distributions</h3>
+<p>Probability distributions in R: <a href="https://poissonisfish.com/2016/12/04/probability-distributions-in-r/" class="uri">https://poissonisfish.com/2016/12/04/probability-distributions-in-r/</a></p>
+<p>Bayesian models in R: <a href="https://www.r-bloggers.com/2019/05/bayesian-models-in-r-2/" class="uri">https://www.r-bloggers.com/2019/05/bayesian-models-in-r-2/</a></p>
+</section>
+</section>
+<section id="tables-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="tables-in-r">Tables in R</h2>
+<p>Set of R packages to build beautiful Data Tables in R</p>
+<ul>
+<li><p>gt (Easily Create Presentation-Ready Display Tables): <a href="https://gt.rstudio.com/" class="uri">https://gt.rstudio.com/</a></p></li>
+<li><p>formattable (produce data structures with formatting rules): <a href="https://renkun-ken.github.io/formattable/" class="uri">https://renkun-ken.github.io/formattable/</a></p></li>
+<li><p>kableExtra (Extend kable tables functionality): <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html" class="uri">https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html</a></p></li>
+<li><p>db (Interesting DT Package introduction from Yihui Xie website: <a href="https://rstudio.github.io/DT/" class="uri">https://rstudio.github.io/DT/</a></p></li>
+<li><p>flextable (Framework for creating tables for reporting and publications): <a href="https://ardata-fr.github.io/flextable-book/" class="uri">https://ardata-fr.github.io/flextable-book/</a></p></li>
+<li><p>reactablefmtr (formatting tables using the reactable R library.): <a href="https://kcuilla.github.io/reactablefmtr/index.html" class="uri">https://kcuilla.github.io/reactablefmtr/index.html</a></p></li>
+</ul>
+<section id="posit-community-table-gallery" class="level3">
+<h3 class="anchored" data-anchor-id="posit-community-table-gallery">POSIT Community Table Gallery</h3>
+<p>POSIT Community Table Gallery: <a href="https://community.rstudio.com/c/table-gallery/64" class="uri">https://community.rstudio.com/c/table-gallery/64</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

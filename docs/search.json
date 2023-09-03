@@ -229,5 +229,26 @@
     "title": "Resources",
     "section": "Maps in R using ggplot2 and OSM",
     "text": "Maps in R using ggplot2 and OSM\n\nAn introduction to plotting maps in R using ggplot2 An introduction to plotting maps in R using ggplot2 can be found on this online book: https://ggplot2-book.org/maps.html\nOpenStreetMap (OSM) Package details: https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html\nOpenStreepMap. OSM is a global open access mapping project, which is free and open under the ODbL licence (OpenStreetMap contributors 2017: https://www.openstreetmap.org/#map=6/54.910/-3.432"
+  },
+  {
+    "objectID": "Resources.html#r-tidyverse-universe",
+    "href": "Resources.html#r-tidyverse-universe",
+    "title": "Resources",
+    "section": "R Tidyverse universe",
+    "text": "R Tidyverse universe\nThis section contains set of packages that follow Tidyverse data science principles.\n\ntidyverse\nThe tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.\nThe goal of tidyr is to help you create tidy data. Tidy data is data where: 1. Every column is variable. 2. Every row is an observation. 3. Every cell is a single value.\n\nTidyverse main website: https://www.tidyverse.org/\n\nCore Tidyverse packages:\n\nggplot2: https://ggplot2.tidyverse.org/\ndplyr: https://dplyr.tidyverse.org/\ntidyr: https://tidyr.tidyverse.org/\nreadr: https://readr.tidyverse.org/\npurrr: https://purrr.tidyverse.org/\ntibble: https://tibble.tidyverse.org/\nstringr: https://stringr.tidyverse.org/\nforcats: https://forcats.tidyverse.org/\n\n\n\nRelated Tidyverse packages\n\ndbplyr\ndbplyr is the database backend for dplyr. It allows you to use remote database tables as if they are in-memory data frames by automatically converting dplyr code into SQL.\n\nDBPLYR https://dbplyr.tidyverse.org/\n\nUsing function ‘show_query()’ after a set of DPLYR verbs, allows you to generate the SQL that is sent tot he database when you request the data.\n\n\ntidyselect\nTools like starts_with() or contains() are called selection helpers. These tools inspect the variable names currently available for selection with peek_vars(). The variable names are registered automatically by eval_select() for the duration of the evaluation:\nThese selection helpers match variables according to a given pattern\nstarts_with() : Starts with an exact prefix. ends_with() : Ends with an exact suffix. contains() : Contains a literal string. matches() : Matches a regular expression. num_range() : Matches a numerical range like x01, x02, x03.\nTidyselect website: https://www.tidyverse.org/blog/2022/10/tidyselect-1-2-0/"
+  },
+  {
+    "objectID": "Resources.html#statistics",
+    "href": "Resources.html#statistics",
+    "title": "Resources",
+    "section": "Statistics",
+    "text": "Statistics\n\nProbability distributions\nProbability distributions in R: https://poissonisfish.com/2016/12/04/probability-distributions-in-r/\nBayesian models in R: https://www.r-bloggers.com/2019/05/bayesian-models-in-r-2/"
+  },
+  {
+    "objectID": "Resources.html#tables-in-r",
+    "href": "Resources.html#tables-in-r",
+    "title": "Resources",
+    "section": "Tables in R",
+    "text": "Tables in R\nSet of R packages to build beautiful Data Tables in R\n\ngt (Easily Create Presentation-Ready Display Tables): https://gt.rstudio.com/\nformattable (produce data structures with formatting rules): https://renkun-ken.github.io/formattable/\nkableExtra (Extend kable tables functionality): https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html\ndb (Interesting DT Package introduction from Yihui Xie website: https://rstudio.github.io/DT/\nflextable (Framework for creating tables for reporting and publications): https://ardata-fr.github.io/flextable-book/\nreactablefmtr (formatting tables using the reactable R library.): https://kcuilla.github.io/reactablefmtr/index.html\n\n\nPOSIT Community Table Gallery\nPOSIT Community Table Gallery: https://community.rstudio.com/c/table-gallery/64"
   }
 ]
