@@ -9,3 +9,5 @@ This is my personal website where I will publish Quarto documents about Data Ana
 - Resources tab: Collection of R, Python and Statistics online resources, I will be including new links on a weekly basis
 
 - Resources: <https://pablo-source.github.io/Resources.html>
+
+- Latest update of the Resources section on 3rd September 2023
