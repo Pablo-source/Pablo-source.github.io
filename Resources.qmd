@@ -107,10 +107,12 @@ Python coding topics and data structures
 
 ## NHS R and Python communities of practise
 
+
 ## NHS-R Community
 
 Together we aim to promote the use of R in the NHS: <https://nhsrcommunity.com/>
 Wider NHS-R community pages and resources, includes links to a number of recorded sessions and training, all based on NHS datasets
+
 
 ### NHS-R Events
 
@@ -239,6 +241,7 @@ Python community to promote the use of Python in the NHS.They organize forums, t
 
 - Driving a web browser with RSelenium: <https://www.computerworld.com/article/2971265/how-to-drive-a-web-browser-with-r-and-rselenium.html>
 
+
 ## Maps in R using ggplot2 and OSM
 
 - An introduction to plotting maps in R using ggplot2 An introduction to plotting maps in R using ggplot2 can be found on this online book: 
@@ -251,9 +254,6 @@ Package details: <https://cran.r-project.org/web/packages/osmdata/vignettes/osmd
 <https://www.openstreetmap.org/#map=6/54.910/-3.432>
 
 
-
-
-
 ## Online R and Python books 
 
 - An introduction to R - Alex Douglas, Deon Roos, Francesca Mancini, Ana Couto & David Lusseau: <https://intro2r.com/>
@@ -264,5 +264,9 @@ Package details: <https://cran.r-project.org/web/packages/osmdata/vignettes/osmd
 
 - Ggplot2 Elegant Graphics for Data Analysis - Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen: <https://ggplot2-book.org/index.html>
 
+- Ggplot2 Elegant Graphics for Data Analysis - Specific chapter about plotting maps in R: <https://ggplot2-book.org/maps.html>
 
+- Geocomputation with R: <https://bookdown.org/robinlovelace/geocompr/spatial-class.html>
+
+- Chapter 16. Geospatial- The Big book of r: <https://www.bigbookofr.com/geospatial.html>
 
