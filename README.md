@@ -10,4 +10,4 @@ This is my personal website where I will publish Quarto documents about Data Ana
 
 - Resources: <https://pablo-source.github.io/Resources.html>
 
-Latest Resources section update on 3rd September 2023
+Latest Resources section update on 3rd September 2023 
