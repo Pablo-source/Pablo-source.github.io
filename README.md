@@ -6,7 +6,7 @@ City Maps tab: Create urban city maps for several cities worldwide, using global
 
 - City maps: <https://pablo-source.github.io/City_maps.html>
 
-Resources tab: Collection of R, Python and Statistics online resources, I will be including new links on a weekly basis
+Resources tab: Collection of R, Python and Statistics online resources, I will be including new links on a regular basis
 
 - Resources: <https://pablo-source.github.io/Resources.html>
 
