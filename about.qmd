@@ -9,7 +9,7 @@ about:
 
 This is my personal website containing Quarto documents about Data Analysis, statistics, predictive modelling and maps created in R and Python.
 
-I am a Data analyst/R developer working in the NHS. I like to explore data using R and Python, my main topics of interests in R and Python are learning predictive analytics, improving my RAP practices when coding, building robust pipelines with Targets and contribute to the wider NHS-R and NHSE-R communities of practice.
+I am a Data analyst/R developer working in the NHS. I like to explore data using R and Python, my main topics of interests are predictive analytics, coding and automation. Improving my RAP practices when coding, building robust pipelines with Targets and contributing to the wider NHS-R and NHSE-R communities of practice.
 
 This website include two main sections, one called City_maps, where I explore how to build several city maps in R using OpenStreetMap (OSM) information with **osmdata** package. These maps are built by adding layers of geographical information onto them.
 
