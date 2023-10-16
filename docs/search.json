@@ -277,6 +277,97 @@
     "href": "NHS_R_Pycom_2023.html#create-github-account",
     "title": "Create Quarto website using RStudio and GitHub",
     "section": "01.Create GitHub Account",
-    "text": "01.Create GitHub Account\nFor this workshop, I am going to use my GitHub account https://github.com/Pablo-tester. My main GitHub account already includes a personal website: https://github.com/Pablo-source/Pablo-source.github.io\n\n\n\n\n\n\n\n\n\n\nhttps://github.com/Pablo-source"
+    "text": "01.Create GitHub Account\nFor this workshop, I am going to use my GitHub account https://github.com/Pablo-tester. My main GitHub account already includes a personal website: https://github.com/Pablo-source/Pablo-source.github.io"
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#local-quarto-website-folder",
+    "href": "NHS_R_Pycom_2023.html#local-quarto-website-folder",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "03.Local Quarto website folder",
+    "text": "03.Local Quarto website folder\n\n\n\n\nPreviously created local folder named “Build_new_website”\nCreate new R project\nContaining new Quarto Website project."
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#create-quarto-website",
+    "href": "NHS_R_Pycom_2023.html#create-quarto-website",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "05.Create Quarto website",
+    "text": "05.Create Quarto website\nWe setup the Quarto website using the repository name we created at the start “Pablo-tester.github.io”. This is required for the website to be rendered in GitHub.\n\n\n\n\n\n\n\nOur Quarto website will create a new project folder as a sub-directory of our main folder:~/Documents/Pablo_zorin/Pablo_tester/Build_new_website\n\nTick check box: Create a git repository\nTick check box: Open in a new session"
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#set-of-quarto-website-files",
+    "href": "NHS_R_Pycom_2023.html#set-of-quarto-website-files",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "05.Set of Quarto website files",
+    "text": "05.Set of Quarto website files\nClick on “Create Project” to open the Quarto Website project. Website files included inside new folder “Pablo-tester.github.io”\n\n\n\nIt that will be populated with the following Quarto related files: - quarto.yml\n\n.gitignore\nabout.qmd\nindex.qmd\nstyles.css\nPablo-tester.github.Rproj"
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#add-docs-folder-to-yaml-file",
+    "href": "NHS_R_Pycom_2023.html#add-docs-folder-to-yaml-file",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "06. Add docs folder to yaml file",
+    "text": "06. Add docs folder to yaml file\nWhen rendering a Quarto documents, quarto saves the rendered website to output directory by default.\nTo host your Quarto website using GitHub pages, change this setup to point to a new docs folder.\n\nChange output directory to a new docs folder"
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#populate-index-file-with-content",
+    "href": "NHS_R_Pycom_2023.html#populate-index-file-with-content",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "07. Populate Index file with content",
+    "text": "07. Populate Index file with content\nOpen the Index.qmd file, populate it with content and click on Render. Include content about the general purpose of this website.\n\n\n\n\n\n\n\nThis action will create a new docs folder on your Files pane. Now our Quarto website is ready to be pushed to GitHub, so it would be rendered using GitHub Pages."
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#fill-resources-content",
+    "href": "NHS_R_Pycom_2023.html#fill-resources-content",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "08. Fill Resources content",
+    "text": "08. Fill Resources content\nCreate new quarto file to populate resources tab in our website\nIn Rstudio click File &gt; New File &gt; Quarto document. Name this new Quarto file Resources"
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#add-new-section-to-quarto.yml-file",
+    "href": "NHS_R_Pycom_2023.html#add-new-section-to-quarto.yml-file",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "09. Add new section to quarto.yml file",
+    "text": "09. Add new section to quarto.yml file\nModify _quarto.yml file content to include new quarto file resources.qmd as a new website section.\n\nClick on save to keep the changes introduced to this _quarto.yml file.\nThe HTML output file from resources tab is saved in the /docs folder."
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#set-branch-to-docs-folder",
+    "href": "NHS_R_Pycom_2023.html#set-branch-to-docs-folder",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "10. Set branch to docs folder",
+    "text": "10. Set branch to docs folder\nFrom setting menu search for Pages left side menu. In this Pages left menu, under branch section: Instead of /root folder, navigate and select /docs folder instead. And then save changes applied"
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#in-rstudio-push-website-to-github",
+    "href": "NHS_R_Pycom_2023.html#in-rstudio-push-website-to-github",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "11. In RStudio push website to GitHub",
+    "text": "11. In RStudio push website to GitHub\nFrom RStudio, push all your website files to the GitHub to update your website content."
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#check-github-website-from-browser",
+    "href": "NHS_R_Pycom_2023.html#check-github-website-from-browser",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "12. Check GitHub website from browser",
+    "text": "12. Check GitHub website from browser\nNow our website is up and running, Access it from GitHub website URL\nhttps://pablo-tester.github.io/"
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#resourcesfurther-topics",
+    "href": "NHS_R_Pycom_2023.html#resourcesfurther-topics",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "13. Resources/Further topics",
+    "text": "13. Resources/Further topics\n\nTutorial for Creating a new RStudio project with GitHub to visualize climate change (CC213). Riffomonas Project https://www.youtube.com/watch?v=d5dUkO5lXds&list=PLmNrK_nkqBpLdTEOj\\_-bwp58490i8ezRI&index=9\nRepository “climate_viz” on my main GitHub account: https://github.com/Pablo-source/climate_viz\nRepository using Git and the terminal to commit changes to GitHub: https://github.com/Pablo-tester/housing_pipelines\n\nFurther topics\n\nSettings: (Manage Pipeline to deploy website):“Re-run all jobs” to ensure Quarto website is rendered\nSetup SSH security setting to clone repo and apply changes using Git and the Terminal instead of Rstudio:\nCreate a public/private RSA key pair to use SSH instead of URL to commit changes to GitHub"
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#any-questions",
+    "href": "NHS_R_Pycom_2023.html#any-questions",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "Any questions?",
+    "text": "Any questions?\n\nPablo Leon-Rodenas\nemail: pablo.leonrodenas@nhs.net\nMy GitHub Repo: https://github.com/Pablo-source\nSlides: https://pablo-source.github.io/NHS_R_Pycom_2023.html#/title-slide\nQuarto slides R script: https://github.com/Pablo-source/Pablo-source.github.io/blob/main/NHS_R_Pycom_2023.qmd\nTHANKS !!\n\n\n\n\nhttps://github.com/Pablo-source"
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#check-github-website",
+    "href": "NHS_R_Pycom_2023.html#check-github-website",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "12. Check GitHub website",
+    "text": "12. Check GitHub website\nNow our website is up and running, Access it from GitHub website URL\nhttps://pablo-tester.github.io/"
   }
 ]

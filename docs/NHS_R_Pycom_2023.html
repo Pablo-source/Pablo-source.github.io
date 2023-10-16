@@ -10,7 +10,8 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.353">
 
-  <meta name="author" content="Pablo Leon-Rodenas">
+  <meta name="author" content="Pablo Leon-Rodenas| NHSE-PMDD |NHS-R/NHS.pycom Conference 2023">
+  <meta name="dcterms.date" content="2023-10-10">
   <title>Pablo-source.github.io - Create Quarto website using RStudio and GitHub</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -333,12 +334,12 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Pablo Leon-Rodenas 
+<code>Pablo Leon-Rodenas</code>| NHSE-PMDD |<code>NHS-R/NHS.pycom Conference 2023</code> 
 </div>
 </div>
 </div>
 
-  <p class="date">Invalid Date</p>
+  <p class="date">October 10, 2023</p>
 </section>
 <section id="objective" class="slide level2" data-background="#43464B">
 <h2>Objective</h2>
@@ -377,14 +378,161 @@ Pablo Leon-Rodenas
 <p>For this workshop, I am going to use my GitHub account https://github.com/Pablo-tester. My main GitHub account already includes a personal website: https://github.com/Pablo-source/Pablo-source.github.io</p>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="NHSR_Pycon_images/01_pablo_source_github_repo.png"></p>
+<p><img data-src="NHSR_Pycom_images/01_pablo_source_github_repo.png"></p>
 </div><div class="column" style="width:60%;">
-<p><img data-src="NHSR_Pycon_images/02_pablo_tester_repo.png"></p>
+<p><img data-src="NHSR_Pycom_images/02_pablo_tester_repo.png"></p>
 </div>
 </div>
+</section>
+<section id="local-quarto-website-folder" class="slide level2" data-background="#43464B">
+<h2>03.Local Quarto website folder</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="NHSR_Pycom_images/06_Step_03_create_folder_01.png"></p>
+<ul>
+<li><p>Previously created local folder named “Build_new_website”</p></li>
+<li><p>Create new R project</p></li>
+<li><p>Containing new Quarto Website project.</p></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="NHSR_Pycom_images/08_Step_03_create_project_02.png"></p>
+</div>
+</div>
+</section>
+<section id="create-quarto-website" class="slide level2" data-background="#43464B">
+<h2>05.Create Quarto website</h2>
+<p>We setup the Quarto website using the <strong>repository name</strong> we created at the start “Pablo-tester.github.io”. This is required for the website to be rendered in GitHub.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="NHSR_Pycom_images/09_Step_05_Create_quarto_website_01.png"></p>
+</div><div class="column" style="width:60%;">
+<p><img data-src="NHSR_Pycom_images/10_Step_05_Create_quarto_website_02.png"></p>
+</div>
+</div>
+<p>Our Quarto website will create a new project folder as a sub-directory of our main folder:~/Documents/Pablo_zorin/Pablo_tester/Build_new_website</p>
+<ul>
+<li><p>Tick check box: Create a git repository</p></li>
+<li><p>Tick check box: Open in a new session</p></li>
+</ul>
+</section>
+<section id="set-of-quarto-website-files" class="slide level2" data-background="#43464B">
+<h2>05.Set of Quarto website files</h2>
+<p>Click on “Create Project” to open the Quarto Website project. Website files included inside new folder “Pablo-tester.github.io”</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="NHSR_Pycom_images/11_Step_05_cuarto_website_files_01.png"></p>
+<p>It that will be populated with the following Quarto related files: - quarto.yml</p>
+<ul>
+<li><p>.gitignore</p></li>
+<li><p>about.qmd</p></li>
+<li><p>index.qmd</p></li>
+<li><p>styles.css</p></li>
+<li><p>Pablo-tester.github.Rproj</p></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="NHSR_Pycom_images/12_Step_05_cuarto_website_files_02.png"> <img data-src="NHSR_Pycom_images/13_Step_05_cuarto_website_files_03.png"></p>
+</div>
+</div>
+</section>
+<section id="add-docs-folder-to-yaml-file" class="slide level2" data-background="#43464B">
+<h2>06. Add docs folder to yaml file</h2>
+<p>When rendering a Quarto documents, quarto saves the rendered website to <code>output</code> directory by default.</p>
+<p>To host your Quarto website using GitHub pages, change this setup to point to a new <code>docs</code> folder.</p>
 
-<p><img src="images/quarto.png" class="slide-logo"></p>
-<div class="footer footer-default">
+<img data-src="NHSR_Pycom_images/14_Step_06_new_docs_folder.png" class="r-stretch"><p>Change <code>output</code> directory to a new <code>docs</code> folder</p>
+</section>
+<section id="populate-index-file-with-content" class="slide level2" data-background="#43464B">
+<h2>07. Populate Index file with content</h2>
+<p>Open the <code>Index.qmd</code> file, populate it with content and click on Render. Include content about the general purpose of this website.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="NHSR_Pycom_images/15_Step_07_populate_index_file.png"></p>
+</div><div class="column" style="width:60%;">
+<p><img data-src="NHSR_Pycom_images/16_Step_07_populate_index_file01.png"></p>
+</div>
+</div>
+<p>This action will create a new <code>docs</code> folder on your Files pane. Now our Quarto website is ready to be pushed to GitHub, so it would be rendered using GitHub Pages.</p>
+</section>
+<section id="fill-resources-content" class="slide level2" data-background="#43464B">
+<h2>08. Fill Resources content</h2>
+<p>Create new <code>quarto file</code> to populate <code>resources</code> tab in our website</p>
+<p>In Rstudio click File &gt; New File &gt; Quarto document. Name this new Quarto file <code>Resources</code></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="NHSR_Pycom_images/17_Step_08_populate_resources_file01.png"></p>
+</div><div class="column" style="width:60%;">
+<p><img data-src="NHSR_Pycom_images/18_Step_08_populate_resources_file02.png"></p>
+</div>
+</div>
+</section>
+<section id="add-new-section-to-quarto.yml-file" class="slide level2" data-background="#43464B">
+<h2>09. Add new section to quarto.yml file</h2>
+<p>Modify _quarto.yml file content to include new quarto file <code>resources.qmd</code> as a new website section.</p>
+
+<img data-src="NHSR_Pycom_images/19_Step_09_resources_tab.png" class="r-stretch"><p>Click on save to keep the changes introduced to this _quarto.yml file.</p>
+<p>The HTML output file from resources tab is saved in the /docs folder.</p>
+</section>
+<section id="set-branch-to-docs-folder" class="slide level2" data-background="#43464B">
+<h2>10. Set branch to docs folder</h2>
+<p>From setting menu search for <code>Pages</code> left side menu. In this <code>Pages</code> left menu, under branch section: Instead of /root folder, navigate and select /docs folder instead. And then save changes applied</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="NHSR_Pycom_images/20_Step_10_github_setup_docs.png"></p>
+</div><div class="column" style="width:60%;">
+<p><img data-src="NHSR_Pycom_images/21_Step_10_github_setup_docs_01.png"></p>
+</div>
+</div>
+</section>
+<section id="in-rstudio-push-website-to-github" class="slide level2" data-background="#43464B">
+<h2>11. In RStudio push website to GitHub</h2>
+<p>From RStudio, push all your website files to the <code>GitHub</code> to update your website content.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="NHSR_Pycom_images/22_Step_11_push_website_files_to_github_RSTUDIO.png"></p>
+</div><div class="column" style="width:60%;">
+<p><img data-src="NHSR_Pycom_images/23_Step_11_push_website_files_to_github_RSTUDIO_01.png"></p>
+</div>
+</div>
+</section>
+<section id="check-github-website" class="slide level2" data-background="#43464B">
+<h2>12. Check GitHub website</h2>
+<p>Now our website is up and running, Access it from GitHub website URL</p>
+<p><code>https://pablo-tester.github.io/</code></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="NHSR_Pycom_images/24_Step_12_check_github_website_online_01.png"></p>
+</div><div class="column" style="width:60%;">
+<p><img data-src="NHSR_Pycom_images/25_Step_12_check_github_website_online_02.png"></p>
+</div>
+</div>
+</section>
+<section id="resourcesfurther-topics" class="slide level2" data-background="#43464B">
+<h2>13. Resources/Further topics</h2>
+<ul>
+<li><p>Tutorial for Creating a new RStudio project with GitHub to visualize climate change (CC213). Riffomonas Project <a href="https://www.youtube.com/watch?v=d5dUkO5lXds&amp;list=PLmNrK_nkqBpLdTEOj\_-bwp58490i8ezRI&amp;index=9" class="uri">https://www.youtube.com/watch?v=d5dUkO5lXds&amp;list=PLmNrK_nkqBpLdTEOj\_-bwp58490i8ezRI&amp;index=9</a></p></li>
+<li><p>Repository “climate_viz” on my main GitHub account: <a href="https://github.com/Pablo-source/climate_viz" class="uri">https://github.com/Pablo-source/climate_viz</a></p></li>
+<li><p>Repository using Git and the terminal to commit changes to GitHub: <a href="https://github.com/Pablo-tester/housing_pipelines" class="uri">https://github.com/Pablo-tester/housing_pipelines</a></p></li>
+</ul>
+<p>Further topics</p>
+<ul>
+<li><p>Settings: (Manage Pipeline to deploy website):“Re-run all jobs” to ensure Quarto website is rendered</p></li>
+<li><p>Setup SSH security setting to clone repo and apply changes using Git and the Terminal instead of Rstudio:</p></li>
+<li><p>Create a public/private RSA key pair to use SSH instead of URL to commit changes to GitHub</p></li>
+</ul>
+</section>
+<section id="any-questions" class="slide level2" data-background="#43464B">
+<h2>Any questions?</h2>
+<ul>
+<li><p>Pablo Leon-Rodenas</p></li>
+<li><p>email: pablo.leonrodenas@nhs.net</p></li>
+<li><p><code>My GitHub Repo</code>: <a href="https://github.com/Pablo-source" class="uri">https://github.com/Pablo-source</a></p></li>
+<li><p><code>Slides</code>: <a href="https://pablo-source.github.io/NHS_R_Pycom_2023.html#/title-slide" class="uri">https://pablo-source.github.io/NHS_R_Pycom_2023.html#/title-slide</a></p></li>
+<li><p><code>Quarto slides R script</code>: <a href="https://github.com/Pablo-source/Pablo-source.github.io/blob/main/NHS_R_Pycom_2023.qmd" class="uri">https://github.com/Pablo-source/Pablo-source.github.io/blob/main/NHS_R_Pycom_2023.qmd</a></p></li>
+<li><p><code>THANKS !!</code></p></li>
+</ul>
+
+
+<img src="images/quarto.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p><a href="https://github.com/Pablo-source" class="uri">https://github.com/Pablo-source</a></p>
 </div>
 </section>

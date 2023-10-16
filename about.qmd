@@ -13,5 +13,4 @@ I am a Data analyst/R developer working in the NHS. I like to explore data using
 
 This website include two main sections, one called City_maps, where I explore how to build several city maps in R using OpenStreetMap (OSM) information with **osmdata** package. These maps are built by adding layers of geographical information onto them.
 
-The second section is a collection of online resources for Python, R and Statistics. It aims to share some interesting websites I find online with other R and Python developers.  
-
+The second section is a collection of online resources for Python, R and Statistics. It aims to share some interesting websites I find online with other R and Python developers.
