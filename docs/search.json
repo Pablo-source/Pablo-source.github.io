@@ -250,5 +250,33 @@
     "title": "Resources",
     "section": "Tables in R",
     "text": "Tables in R\nSet of R packages to build beautiful Data Tables in R\n\ngt (Easily Create Presentation-Ready Display Tables): https://gt.rstudio.com/\nformattable (produce data structures with formatting rules): https://renkun-ken.github.io/formattable/\nkableExtra (Extend kable tables functionality): https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html\ndb (Interesting DT Package introduction from Yihui Xie website: https://rstudio.github.io/DT/\nflextable (Framework for creating tables for reporting and publications): https://ardata-fr.github.io/flextable-book/\nreactablefmtr (formatting tables using the reactable R library.): https://kcuilla.github.io/reactablefmtr/index.html\n\n\nPOSIT Community Table Gallery\nPOSIT Community Table Gallery: https://community.rstudio.com/c/table-gallery/64"
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#objective",
+    "href": "NHS_R_Pycom_2023.html#objective",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "Objective",
+    "text": "Objective\nThis is a tutorial about creating your personal website using Quarto in RStudio (from Posit) and to publish it to GitHub. The website will include a section about R and Python online resources\nPre-requisites\n\nGitHub Account: You must have a GitHub account or create a new one to host your website.\nRStudio: We will push all our code to GitHub using Rstudio (you can use its built in terminal to do it so)\nGit and GitHub: We will use Git integrated within Rstudio to publish the different website files (index.html, about.html, etc) to GitHub. You can also upload files directly to GitHub website repo."
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#presentation-structure",
+    "href": "NHS_R_Pycom_2023.html#presentation-structure",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "Presentation structure",
+    "text": "Presentation structure\n\nStep 01: Create a new GitHub Account\nStep 02: Create a new repository to host your website on GitHub\nStep 03: Create new folder in your local machine to build your website\nStep 04: Create new RStudio project\nStep 05: Create Quarto website document\nStep 06: Critical step. Change output directory to a new \"docs\" folder"
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#presentation-structure-1",
+    "href": "NHS_R_Pycom_2023.html#presentation-structure-1",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "Presentation structure",
+    "text": "Presentation structure\n\nStep 07: Populate Index file with content and click on \"Render\"\nStep 08: Create new quarto file to populate the new \"resources\" tab in our website\nStep 09: Go to the _quarto.yml and add the new section below the about.qmd line\nStep 10: Go to \"Pages\" left menu on the \"Setting\" main top menu on our Pablo-tester new repo\nStep 11: Push all your website files to GitHub dedicated repo using RStudio\nStep 12: Check all GitHub website sections content is accessible from your browser using website URL"
+  },
+  {
+    "objectID": "NHS_R_Pycom_2023.html#create-github-account",
+    "href": "NHS_R_Pycom_2023.html#create-github-account",
+    "title": "Create Quarto website using RStudio and GitHub",
+    "section": "01.Create GitHub Account",
+    "text": "01.Create GitHub Account\nFor this workshop, I am going to use my GitHub account https://github.com/Pablo-tester. My main GitHub account already includes a personal website: https://github.com/Pablo-source/Pablo-source.github.io\n\n\n\n\n\n\n\n\n\n\nhttps://github.com/Pablo-source"
   }
 ]
