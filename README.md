@@ -15,5 +15,5 @@ NHS-R/NHS.Pycom Lightning Talk
 Quarto revealjs interaction presentation presented in the NHS-R/NHS.pycom online conference on the 10th October 2023
 Talk: "Create a website using Quarto linking RStudio and GitHub"
 
-- Quarto presentatino slides:
+- Quarto interactive presentation slides: https://pablo-source.github.io/NHS_R_Pycom_2023.html#/title-slide
 - Source code: 
