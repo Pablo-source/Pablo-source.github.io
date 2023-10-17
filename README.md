@@ -10,4 +10,10 @@ Resources tab: Collection of R, Python and Statistics online resources, I will b
 
 - Resources: <https://pablo-source.github.io/Resources.html>
 
-Latest Resources section update on 3rd September 2023 
+NHS-R/NHS.Pycom Lightning Talk
+
+Quarto revealjs interaction presentation presented in the NHS-R/NHS.pycom online conference on the 10th October 2023
+Talk: "Create a website using Quarto linking RStudio and GitHub"
+
+- Quarto presentatino slides:
+- Source code: 
