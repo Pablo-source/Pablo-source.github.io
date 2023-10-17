@@ -16,4 +16,5 @@ Quarto revealjs interaction presentation presented in the NHS-R/NHS.pycom online
 Talk: "Create a website using Quarto linking RStudio and GitHub"
 
 - Quarto interactive presentation slides: https://pablo-source.github.io/NHS_R_Pycom_2023.html#/title-slide
-- Source code: 
+- Source code: https://github.com/Pablo-source/Pablo-source.github.io/blob/main/NHS_R_Pycom_2023.qmd
+  
