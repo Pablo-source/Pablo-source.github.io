@@ -12,6 +12,7 @@ website:
       - City_maps.qmd
       - Resources.qmd
       - NHS_R_Pycom_2023.qmd
+      - Annotations.qmd
 
 format:
   html:
