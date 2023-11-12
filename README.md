@@ -22,4 +22,5 @@ Title: "Create a website using Quarto linking RStudio and GitHub"
 
 This is a small tutorial on how to annotate custom ggplot charts. GGPLOT2 includes shadowed boxes, arrows and text to highlight specific data points in charts, helping to drive the story telling, communicating meaningful information using plots and visualization elements in R.
 
-- Source code: https://pablo-source.github.io/Annotations.html
+- Annotations tab: https://pablo-source.github.io/Annotations.html
+- Source code: https://github.com/Pablo-source/Pablo-source.github.io/blob/main/Annotations.qmd
