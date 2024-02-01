@@ -1,0 +1,45 @@
+---
+title: "Fitting distributions"
+author: "`Pablo Leon-Rodenas| NHSE`" 
+date: "`r Sys.Date()`"
+date-format: long
+editor: visual
+format:
+  revealjs:
+    smaller: true 
+    theme: sky
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: images/quarto.png
+    css: styles.css
+    footer: <https://github.com/Pablo-source>
+resources:
+  - demo.pdf
+---
+
+## Distributions
+
+This is a small introduction to distributions and how to fit them to ggplot2 charts. 
+
+- In statistics a **distribution** is a function that shows the possible values for a variable and how often they occur. It is also a probability distribution.
+
+- We will use a real example with A&E Data Downloaded from NHS Digital website, and we will apply a Normal distribution to Type I Attendances metric.
+
+- The reference and example used to create these distribution charts can be found on this website:
+<https://data-se.netlify.app/2021/06/23/overlaying-facetted-histograms-with-normal-curve-using-ggplot2/>
+
+## Load required packages
+
+We start by loading required packages for our analysis. We include *echo=TRUE* and *message=TRUE* to display output from rendered r code chuncks. 
+
+```{r Initial environment setup, echo = TRUE, message=TRUE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
+                      dpi = 180, fig.width = 8, fig.height = 5)
+library(tidyverse)
+library(janitor)
+library(readxl)
+library(here)
+```
+

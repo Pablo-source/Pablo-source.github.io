@@ -6,12 +6,12 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.335">
 
-  <meta name="author" content="Pablo Leon-Rodenas| NHSE-PMDD |NHS-R/NHS.pycom Conference 2023">
-  <meta name="dcterms.date" content="2023-10-10">
-  <title>Pablo-source.github.io - Create Quarto website using RStudio and GitHub</title>
+  <meta name="author" content="Pablo Leon-Rodenas| NHSE">
+  <meta name="dcterms.date" content="2024-02-01">
+  <title>Pablo-source.github.io - Fitting distributions</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,6 +29,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link rel="stylesheet" href="styles.css">
@@ -323,212 +387,66 @@
     }
   </style>
 </head>
-<body class="quarto-dark">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Create Quarto website using RStudio and GitHub</h1>
+  <h1 class="title">Fitting distributions</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<code>Pablo Leon-Rodenas</code>| NHSE-PMDD |<code>NHS-R/NHS.pycom Conference 2023</code> 
+<code>Pablo Leon-Rodenas| NHSE</code> 
 </div>
 </div>
 </div>
 
-  <p class="date">October 10, 2023</p>
+  <p class="date">February 1, 2024</p>
 </section>
-<section id="objective" class="slide level2" data-background="#43464B">
-<h2>Objective</h2>
-<p>This is a tutorial about creating your personal website using Quarto in RStudio (from Posit) and to publish it to GitHub. The website will include a section about R and Python online resources</p>
-<p><code>Pre-requisites</code></p>
+<section id="distributions" class="slide level2">
+<h2>Distributions</h2>
+<p>This is a small introduction to distributions and how to fit them to ggplot2 charts.</p>
 <ul>
-<li><p>GitHub Account: You must have a GitHub account or create a new one to host your website.</p></li>
-<li><p>RStudio: We will push all our code to GitHub using Rstudio (you can use its built in terminal to do it so)</p></li>
-<li><p>Git and GitHub: We will use Git integrated within Rstudio to publish the different website files (index.html, about.html, etc) to GitHub. You can also upload files directly to GitHub website repo.</p></li>
+<li><p>In statistics a <strong>distribution</strong> is a function that shows the possible values for a variable and how often they occur. It is also a probability distribution.</p></li>
+<li><p>We will use a real example with A&amp;E Data Downloaded from NHS Digital website, and we will apply a Normal distribution to Type I Attendances metric.</p></li>
+<li><p>The reference and example used to create these distribution charts can be found on this website: <a href="https://data-se.netlify.app/2021/06/23/overlaying-facetted-histograms-with-normal-curve-using-ggplot2/" class="uri">https://data-se.netlify.app/2021/06/23/overlaying-facetted-histograms-with-normal-curve-using-ggplot2/</a></p></li>
 </ul>
 </section>
-<section id="presentation-structure" class="slide level2" data-background="#43464B">
-<h2>Presentation structure</h2>
-<ul>
-<li><p>Step 01: Create a new <code>GitHub Account</code></p></li>
-<li><p>Step 02: Create a <code>new repository</code> to host your website on GitHub</p></li>
-<li><p>Step 03: Create <code>new folder</code> in your local machine to build your website</p></li>
-<li><p>Step 04: Create new <code>RStudio project</code></p></li>
-<li><p>Step 05: Create <code>Quarto website document</code></p></li>
-<li><p>Step 06: <code>Critical</code> step. Change <code>output</code> directory to a <code>new "docs" folder</code></p></li>
-</ul>
-</section>
-<section id="presentation-structure-1" class="slide level2" data-background="#43464B">
-<h2>Presentation structure</h2>
-<ul>
-<li><p>Step 07: Populate <code>Index file</code> with content and click on <code>"Render"</code></p></li>
-<li><p>Step 08: Create new <code>quarto file</code> to populate the <code>new "resources" tab</code> in our website</p></li>
-<li><p>Step 09: Go to the <code>_quarto.yml</code> and add the <code>new section</code> below the about.qmd line</p></li>
-<li><p>Step 10: Go to <code>"Pages"</code> left menu on the <code>"Setting"</code> main top menu on our Pablo-tester new repo</p></li>
-<li><p>Step 11: <code>Push</code> all your website <code>files</code> to <code>GitHub</code> dedicated repo using <code>RStudio</code></p></li>
-<li><p>Step 12: Check all GitHub <code>website</code> <code>sections</code> content is <code>accessible</code> from your browser using website URL</p></li>
-</ul>
-</section>
-<section id="create-github-account" class="slide level2" data-background="#43464B">
-<h2>01.Create GitHub Account</h2>
-<p>For this workshop, I am going to use my GitHub account https://github.com/Pablo-tester. My main GitHub account already includes a personal website: https://github.com/Pablo-source/Pablo-source.github.io</p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><img data-src="NHSR_Pycom_images/01_pablo_source_github_repo.png"></p>
-</div><div class="column" style="width:60%;">
-<p><img data-src="NHSR_Pycom_images/02_pablo_tester_repo.png"></p>
+<section id="load-required-packages" class="slide level2">
+<h2>Load required packages</h2>
+<p>We start by loading required packages for our analysis. We include <em>echo=TRUE</em> and <em>message=TRUE</em> to display output from rendered r code chuncks.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="at">warning =</span> <span class="cn">FALSE</span>, <span class="at">message =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb1-2"><a href="#cb1-2"></a>                      <span class="at">dpi =</span> <span class="dv">180</span>, <span class="at">fig.width =</span> <span class="dv">8</span>, <span class="at">fig.height =</span> <span class="dv">5</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>-- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+v dplyr     1.1.2     v readr     2.1.4
+v forcats   1.0.0     v stringr   1.5.0
+v ggplot2   3.4.4     v tibble    3.2.1
+v lubridate 1.9.2     v tidyr     1.3.0
+v purrr     1.0.1     
+-- Conflicts ------------------------------------------ tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+i Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-</div>
-</section>
-<section id="local-quarto-website-folder" class="slide level2" data-background="#43464B">
-<h2>03.Local Quarto website folder</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><img data-src="NHSR_Pycom_images/06_Step_03_create_folder_01.png"></p>
-<ul>
-<li><p>Previously created local folder named “Build_new_website”</p></li>
-<li><p>Create new R project</p></li>
-<li><p>Containing new Quarto Website project.</p></li>
-</ul>
-</div><div class="column" style="width:60%;">
-<p><img data-src="NHSR_Pycom_images/08_Step_03_create_project_02.png"></p>
-</div>
-</div>
-</section>
-<section id="create-quarto-website" class="slide level2" data-background="#43464B">
-<h2>05.Create Quarto website</h2>
-<p>We setup the Quarto website using the <strong>repository name</strong> we created at the start “Pablo-tester.github.io”. This is required for the website to be rendered in GitHub.</p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><img data-src="NHSR_Pycom_images/09_Step_05_Create_quarto_website_01.png"></p>
-</div><div class="column" style="width:60%;">
-<p><img data-src="NHSR_Pycom_images/10_Step_05_Create_quarto_website_02.png"></p>
-</div>
-</div>
-<p>Our Quarto website will create a new project folder as a sub-directory of our main folder:~/Documents/Pablo_zorin/Pablo_tester/Build_new_website</p>
-<ul>
-<li><p>Tick check box: Create a git repository</p></li>
-<li><p>Tick check box: Open in a new session</p></li>
-</ul>
-</section>
-<section id="set-of-quarto-website-files" class="slide level2" data-background="#43464B">
-<h2>05.Set of Quarto website files</h2>
-<p>Click on “Create Project” to open the Quarto Website project. Website files included inside new folder “Pablo-tester.github.io”</p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><img data-src="NHSR_Pycom_images/11_Step_05_cuarto_website_files_01.png"></p>
-<p>It that will be populated with the following Quarto related files: - quarto.yml</p>
-<ul>
-<li><p>.gitignore</p></li>
-<li><p>about.qmd</p></li>
-<li><p>index.qmd</p></li>
-<li><p>styles.css</p></li>
-<li><p>Pablo-tester.github.Rproj</p></li>
-</ul>
-</div><div class="column" style="width:60%;">
-<p><img data-src="NHSR_Pycom_images/12_Step_05_cuarto_website_files_02.png"> <img data-src="NHSR_Pycom_images/13_Step_05_cuarto_website_files_03.png"></p>
-</div>
-</div>
-</section>
-<section id="add-docs-folder-to-yaml-file" class="slide level2" data-background="#43464B">
-<h2>06. Add docs folder to yaml file</h2>
-<p>When rendering a Quarto documents, quarto saves the rendered website to <code>output</code> directory by default.</p>
-<p>To host your Quarto website using GitHub pages, change this setup to point to a new <code>docs</code> folder.</p>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'janitor'
 
-<img data-src="NHSR_Pycom_images/14_Step_06_new_docs_folder.png" class="r-stretch"><p>Change <code>output</code> directory to a new <code>docs</code> folder</p>
-</section>
-<section id="populate-index-file-with-content" class="slide level2" data-background="#43464B">
-<h2>07. Populate Index file with content</h2>
-<p>Open the <code>Index.qmd</code> file, populate it with content and click on Render. Include content about the general purpose of this website.</p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><img data-src="NHSR_Pycom_images/15_Step_07_populate_index_file.png"></p>
-</div><div class="column" style="width:60%;">
-<p><img data-src="NHSR_Pycom_images/16_Step_07_populate_index_file01.png"></p>
-</div>
-</div>
-<p>This action will create a new <code>docs</code> folder on your Files pane. Now our Quarto website is ready to be pushed to GitHub, so it would be rendered using GitHub Pages.</p>
-</section>
-<section id="fill-resources-content" class="slide level2" data-background="#43464B">
-<h2>08. Fill Resources content</h2>
-<p>Create new <code>quarto file</code> to populate <code>resources</code> tab in our website</p>
-<p>In Rstudio click File &gt; New File &gt; Quarto document. Name this new Quarto file <code>Resources</code></p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><img data-src="NHSR_Pycom_images/17_Step_08_populate_resources_file01.png"></p>
-</div><div class="column" style="width:60%;">
-<p><img data-src="NHSR_Pycom_images/18_Step_08_populate_resources_file02.png"></p>
-</div>
-</div>
-</section>
-<section id="add-new-section-to-quarto.yml-file" class="slide level2" data-background="#43464B">
-<h2>09. Add new section to quarto.yml file</h2>
-<p>Modify _quarto.yml file content to include new quarto file <code>resources.qmd</code> as a new website section.</p>
+The following objects are masked from 'package:stats':
 
-<img data-src="NHSR_Pycom_images/19_Step_09_resources_tab.png" class="r-stretch"><p>Click on save to keep the changes introduced to this _quarto.yml file.</p>
-<p>The HTML output file from resources tab is saved in the /docs folder.</p>
-</section>
-<section id="set-branch-to-docs-folder" class="slide level2" data-background="#43464B">
-<h2>10. Set branch to docs folder</h2>
-<p>From setting menu search for <code>Pages</code> left side menu. In this <code>Pages</code> left menu, under branch section: Instead of /root folder, navigate and select /docs folder instead. And then save changes applied</p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><img data-src="NHSR_Pycom_images/20_Step_10_github_setup_docs.png"></p>
-</div><div class="column" style="width:60%;">
-<p><img data-src="NHSR_Pycom_images/21_Step_10_github_setup_docs_01.png"></p>
+    chisq.test, fisher.test</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>here() starts at C:/R/WorkingDir/Pablo-source.github.io</code></pre>
 </div>
 </div>
-</section>
-<section id="in-rstudio-push-website-to-github" class="slide level2" data-background="#43464B">
-<h2>11. In RStudio push website to GitHub</h2>
-<p>From RStudio, push all your website files to the <code>GitHub</code> to update your website content.</p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><img data-src="NHSR_Pycom_images/22_Step_11_push_website_files_to_github_RSTUDIO.png"></p>
-</div><div class="column" style="width:60%;">
-<p><img data-src="NHSR_Pycom_images/23_Step_11_push_website_files_to_github_RSTUDIO_01.png"></p>
-</div>
-</div>
-</section>
-<section id="check-github-website" class="slide level2" data-background="#43464B">
-<h2>12. Check GitHub website</h2>
-<p>Now our website is up and running, Access it from GitHub website URL</p>
-<p><code>https://pablo-tester.github.io/</code></p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><img data-src="NHSR_Pycom_images/24_Step_12_check_github_website_online_01.png"></p>
-</div><div class="column" style="width:60%;">
-<p><img data-src="NHSR_Pycom_images/25_Step_12_check_github_website_online_02.png"></p>
-</div>
-</div>
-</section>
-<section id="resourcesfurther-topics" class="slide level2" data-background="#43464B">
-<h2>13. Resources/Further topics</h2>
-<ul>
-<li><p>Tutorial for Creating a new RStudio project with GitHub to visualize climate change (CC213). Riffomonas Project <a href="https://www.youtube.com/watch?v=d5dUkO5lXds&amp;list=PLmNrK_nkqBpLdTEOj\_-bwp58490i8ezRI&amp;index=9" class="uri">https://www.youtube.com/watch?v=d5dUkO5lXds&amp;list=PLmNrK_nkqBpLdTEOj\_-bwp58490i8ezRI&amp;index=9</a></p></li>
-<li><p>Repository “climate_viz” on my main GitHub account: <a href="https://github.com/Pablo-source/climate_viz" class="uri">https://github.com/Pablo-source/climate_viz</a></p></li>
-<li><p>Repository using Git and the terminal to commit changes to GitHub: <a href="https://github.com/Pablo-tester/housing_pipelines" class="uri">https://github.com/Pablo-tester/housing_pipelines</a></p></li>
-</ul>
-<p>Further topics</p>
-<ul>
-<li><p>Settings: (Manage Pipeline to deploy website):“Re-run all jobs” to ensure Quarto website is rendered</p></li>
-<li><p>Setup SSH security setting to clone repo and apply changes using Git and the Terminal instead of Rstudio:</p></li>
-<li><p>Create a public/private RSA key pair to use SSH instead of URL to commit changes to GitHub</p></li>
-</ul>
-</section>
-<section id="any-questions" class="slide level2" data-background="#43464B">
-<h2>Any questions?</h2>
-<ul>
-<li><p>Pablo Leon-Rodenas</p></li>
-<li><p>email: pablo.leonrodenas@nhs.net</p></li>
-<li><p><code>My GitHub Repo</code>: <a href="https://github.com/Pablo-source" class="uri">https://github.com/Pablo-source</a></p></li>
-<li><p><code>Slides</code>: <a href="https://pablo-source.github.io/NHS_R_Pycom_2023.html#/title-slide" class="uri">https://pablo-source.github.io/NHS_R_Pycom_2023.html#/title-slide</a></p></li>
-<li><p><code>Quarto slides R script</code>: <a href="https://github.com/Pablo-source/Pablo-source.github.io/blob/main/NHS_R_Pycom_2023.qmd" class="uri">https://github.com/Pablo-source/Pablo-source.github.io/blob/main/NHS_R_Pycom_2023.qmd</a></p></li>
-<li><p><code>THANKS !!</code></p></li>
-</ul>
 
 
 <img src="images/quarto.png" class="slide-logo r-stretch"><div class="footer footer-default">
@@ -748,6 +666,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
