@@ -445,7 +445,7 @@
     "href": "distributions.html#distributions",
     "title": "Fitting distributions",
     "section": "Distributions",
-    "text": "Distributions\nThis is a small introduction to distributions and how to fit them to ggplot2 charts.\n\nIn statistics a distribution is a function that shows the possible values for a variable and how often they occur. It is also a probability distribution.\nWe will use a real example with A&E Data Downloaded from NHS Digital website, and we will apply a Normal distribution to Type I Attendances metric.\nThe reference and example used to create these distribution charts can be found on this website: https://data-se.netlify.app/2021/06/23/overlaying-facetted-histograms-with-normal-curve-using-ggplot2/"
+    "text": "Distributions\nThis is a small introduction to distributions and how to fit them to ggplot2 charts.\n\nIn statistics a distribution is a function that shows the possible values for a variable and how often they occur. It is also a probability distribution.\nWe will use A&E Data Downloaded from NHS Digital website, and we will apply a Normal distribution to Type I Attendances metric.\nThe reference and example used to create these distribution charts can be found on this website: https://data-se.netlify.app/2021/06/23/overlaying-facetted-histograms-with-normal-curve-using-ggplot2/"
   },
   {
     "objectID": "distributions.html#load-required-packages",

@@ -13,6 +13,7 @@ website:
       - Resources.qmd
       - NHS_R_Pycom_2023.qmd
       - Annotations.qmd
+      - distributions.qmd
 
 
 format:
