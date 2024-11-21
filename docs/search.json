@@ -453,5 +453,82 @@
     "title": "Fitting distributions",
     "section": "Load required packages",
     "text": "Load required packages\nWe start by loading required packages for our analysis. We include echo=TRUE and message=TRUE to display output from rendered r code chuncks.\n\nknitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,\n                      dpi = 180, fig.width = 8, fig.height = 5)\nlibrary(tidyverse)\n\n-- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --\nv dplyr     1.1.2     v readr     2.1.4\nv forcats   1.0.0     v stringr   1.5.0\nv ggplot2   3.4.4     v tibble    3.2.1\nv lubridate 1.9.2     v tidyr     1.3.0\nv purrr     1.0.1     \n-- Conflicts ------------------------------------------ tidyverse_conflicts() --\nx dplyr::filter() masks stats::filter()\nx dplyr::lag()    masks stats::lag()\ni Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors\n\nlibrary(janitor)\n\n\nAttaching package: 'janitor'\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\nlibrary(readxl)\nlibrary(here)\n\nhere() starts at C:/R/WorkingDir/Pablo-source.github.io\n\n\n\n\n\nhttps://github.com/Pablo-source"
+  },
+  {
+    "objectID": "RPySOC_24_Docker_Shiny.html#introduction",
+    "href": "RPySOC_24_Docker_Shiny.html#introduction",
+    "title": "Deploying a Shiny app in a Docker container",
+    "section": "Introduction",
+    "text": "Introduction\n\nThis presentations shows a Shiny app deployed inside a Docker Container in a Debian desktop similar to Raspberry PI OS\n\n\n\n https://www.docker.com/\n\n https://github.com/Pablo-source/Basic-Shiny-app"
+  },
+  {
+    "objectID": "RPySOC_24_Docker_Shiny.html#main-topics",
+    "href": "RPySOC_24_Docker_Shiny.html#main-topics",
+    "title": "Deploying a Shiny app in a Docker container",
+    "section": "Main topics",
+    "text": "Main topics\n\nWhat is a Docker Container?\nDesign and build your Shiny App\nCreate a Dockerfile\nBuild your adhoc Docker image from Dockerfile\nDeploy Shiny app to a Docker Container"
+  },
+  {
+    "objectID": "RPySOC_24_Docker_Shiny.html#what-is-docker",
+    "href": "RPySOC_24_Docker_Shiny.html#what-is-docker",
+    "title": "Deploying a Shiny app in a Docker container",
+    "section": "What is Docker?",
+    "text": "What is Docker?\nA container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.\n\n\nA Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.  https://www.docker.com/\n\nContainer images become containers at runtime and in the case of Docker containers – images become containers when they run on Docker Engine.\nAvailable for both Linux and Windows-based applications, containerized software will always run the same, regardless of the infrastructure.\nContainers isolate software from its environment and ensure that it works uniformly between development and staging.\nhttps://www.docker.com/resources/what-container/"
+  },
+  {
+    "objectID": "RPySOC_24_Docker_Shiny.html#the-rocker-project",
+    "href": "RPySOC_24_Docker_Shiny.html#the-rocker-project",
+    "title": "Deploying a Shiny app in a Docker container",
+    "section": "The Rocker Project",
+    "text": "The Rocker Project\nI am using Rocker Project Docker container image. A specific Docker Container for the R Environment. This allows us to start R inside a Container\n\n\n https://rocker-project.org/\n https://hub.docker.com/_/r-base\n\nGet rocker/r-base Docker image \nRun Docker image to start R inside a container"
+  },
+  {
+    "objectID": "RPySOC_24_Docker_Shiny.html#shiny-app-to-be-deployed-in-docker",
+    "href": "RPySOC_24_Docker_Shiny.html#shiny-app-to-be-deployed-in-docker",
+    "title": "Deploying a Shiny app in a Docker container",
+    "section": "Shiny App to be deployed in Docker",
+    "text": "Shiny App to be deployed in Docker\nThis Shiny app displays COVID 19 Confirmed, Recovered and Death cases by country for two months period. I have used renv to restore entire project after snapshot taken.\n\n\n\nhttps://github.com/Pablo-source/RPYSOC_2024_Docker_Shiny \n\nIt is a simplified version of this Shiny app https://github.com/Pablo-source/Basic-Shiny-app"
+  },
+  {
+    "objectID": "RPySOC_24_Docker_Shiny.html#pull-image-and-build-dockerfile",
+    "href": "RPySOC_24_Docker_Shiny.html#pull-image-and-build-dockerfile",
+    "title": "Deploying a Shiny app in a Docker container",
+    "section": "1. Pull image and build Dockerfile",
+    "text": "1. Pull image and build Dockerfile\n\n\nPull required rocker/r-base Docker image to build your own.\n\nActions in the Docker.txt file\n\nBase image on rocker/r-base\nReplicate local folder structure in Dockerfile\nCopy files into Dockerfile\nRun R scripts in Docker when buildinfg the image\n\n\n\nDocker file is a text file we create in the project directory\n\nhttps://github.com/Pablo-source/RPYSOC_2024_Docker_Shiny/blob/ main/Docker.txt"
+  },
+  {
+    "objectID": "RPySOC_24_Docker_Shiny.html#build-our-docker-image-from-dockerfile",
+    "href": "RPySOC_24_Docker_Shiny.html#build-our-docker-image-from-dockerfile",
+    "title": "Deploying a Shiny app in a Docker container",
+    "section": "2. Build our Docker image from Dockerfile",
+    "text": "2. Build our Docker image from Dockerfile\nThen build a specific image based on our Dockerfile. Putting together all components for our own Docker image.\n\n\n\n\n\n\n\nThe process of building the Docker image can take a while, we are re-creating the environment and installing all packages on top of original rocker/r-base Docker image we obtained from https://hub.docker.com/_/r-base"
+  },
+  {
+    "objectID": "RPySOC_24_Docker_Shiny.html#build-your-image-and-bundle-your-code",
+    "href": "RPySOC_24_Docker_Shiny.html#build-your-image-and-bundle-your-code",
+    "title": "Deploying a Shiny app in a Docker container",
+    "section": "3. Build your image and bundle your code",
+    "text": "3. Build your image and bundle your code\nWe use docker build command at the project folder directory level. Where our Dockerfile is saved.\n\n\n \n\nUse “docker image ls” command to display docker image we just built IMAGE ID: 67f74374b225 \nYou can modify this docker image you just built and re-build it again after several changes:\n\ndocker build -t myname/myimage ."
+  },
+  {
+    "objectID": "RPySOC_24_Docker_Shiny.html#spin-a-container-running-your-app",
+    "href": "RPySOC_24_Docker_Shiny.html#spin-a-container-running-your-app",
+    "title": "Deploying a Shiny app in a Docker container",
+    "section": "4. Spin a container running your app",
+    "text": "4. Spin a container running your app\nOnce the Docker image has been built, then you can use it to start in an brand new container in Docker.\n\ndocker run -d –rm -p 3838:3838 my-shinyapp-image"
+  },
+  {
+    "objectID": "RPySOC_24_Docker_Shiny.html#share-your-docker-file",
+    "href": "RPySOC_24_Docker_Shiny.html#share-your-docker-file",
+    "title": "Deploying a Shiny app in a Docker container",
+    "section": "5. Share your Docker file",
+    "text": "5. Share your Docker file\nFinally use docker push command to share your Docker image with the community of Docker users in Docker Hub.\n\ndocker push\n\nThis is Docker Hub website to share your Docker file and apps\n\n\nhttps://login.docker.com/ \n\nBrowse for Docker files with apps in Docker Hub https://hub.docker.com/"
+  },
+  {
+    "objectID": "RPySOC_24_Docker_Shiny.html#thanks",
+    "href": "RPySOC_24_Docker_Shiny.html#thanks",
+    "title": "Deploying a Shiny app in a Docker container",
+    "section": "THANKS !",
+    "text": "THANKS !\n\nAny questions?\nEmail: pablo.leonrodenas@nhs.net\nMy GitHub Repo: https://github.com/Pablo-source\n\n\n\n\nhttps://github.com/Pablo-source"
   }
 ]

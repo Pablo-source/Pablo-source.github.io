@@ -12,6 +12,7 @@ website:
       - City_maps.qmd
       - Resources.qmd
       - NHS_R_Pycom_2023.qmd
+      - RPySOC_24_Docker_Shiny.qmd
       - Annotations.qmd
       - distributions.qmd
 
