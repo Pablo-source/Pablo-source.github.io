@@ -12,7 +12,7 @@ format:
     chalkboard: 
       buttons: false
     preview-links: auto
-    logo: figures/quarto.png
+    logo: NHSR_Pycom_images/quarto.png
     css: styles.css
     footer: <https://github.com/Pablo-source>
 resources:
@@ -76,7 +76,7 @@ library(jsonlite)
 :::
 
 ::: {.column width="60%"}
-![](figures/03%20API%20request%20response.png)
+![](NHSR_Pycom_images/03 API request response.png)
 :::
 :::::
 
@@ -123,7 +123,7 @@ result1
 
 ::::: columns
 ::: {.column width="40%"}
-![](figures/04%20httr2_package_tidyverse.png)
+![](NHSR_Pycom_images/04 httr2_package_tidyverse.png)
 :::
 
 ::: {.column width="60%"}
@@ -313,12 +313,12 @@ detailed_forecast
 - So we can tweak any API we can extract data with to select and choose those fields with relevant information. Automating the data colection process.
 
 - **Shiny App example**
-![](figures/05 Shiny app example.png){width="50%"}
+![](NHSR_Pycom_images/05 Shiny app example.png){width="50%"}
 - <https://github.com/Pablo-source/RPYSOC_2024_Docker_Shiny>
 
 - **Shiny app Using Leaflet and geospatial data **
 - <https://github.com/Pablo-source/Basic-Shiny-app>
-![](figures/06 Geospatial data Shiny app.png){width="50%"}
+![](NHSR_Pycom_images/06 Geospatial data Shiny app.png){width="50%"}
 
 
 - or **Parameterized reports**
