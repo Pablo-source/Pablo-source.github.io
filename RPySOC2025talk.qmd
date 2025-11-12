@@ -19,7 +19,7 @@ format:
 
 This presentations describes how to use `APIs`  in `R` to `obtain` socio-economic `indicators`.
 
-I will cover the following topics:
+It will cover the following topics:
 
 -   `What are APIs`: Application Programming Interface
 

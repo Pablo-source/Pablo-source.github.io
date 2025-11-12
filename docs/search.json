@@ -641,7 +641,7 @@
     "href": "RPySOC2025talk.html#further-topics-api-authentication",
     "title": "Using APIs in R to obtain Indicators for visualizations",
     "section": "Further topics API Authentication",
-    "text": "Further topics API Authentication\n\nAPI Authentication. Secure you API with any of these methods:\n\n\nOAuth 2.0: Ideal for third-party integration. Uses tokens for secure, delegated access.\nAPI Keys: Simple and easy for internal services but less secure without proper management.\nJWT (JSON Web Tokens): Stateless and efficient for microservices and distributed systems.\nBasic Authentication: Outdated but simple. Best for low-security internal systems.\nBearer Authentication: Token-based, modern, and scalable for web APIs.\nmTLS (Mutual Transport Layer Security): High-security method using certificates for mutual verification.\nOpenID Connect: Built on OAuth 2.0, adds identity verification for managing user identities."
+    "text": "Further topics API Authentication\nAPI Authentication. Secure you API with any of these methods:\n\nOAuth 2.0: Ideal for third-party integration. Uses tokens for secure, delegated access.\nAPI Keys: Simple and easy for internal services but less secure without proper management.\nJWT (JSON Web Tokens): Stateless and efficient for microservices and distributed systems.\nBasic Authentication: Outdated but simple. Best for low-security internal systems.\nBearer Authentication: Token-based, modern, and scalable for web APIs.\nmTLS (Mutual Transport Layer Security): High-security method using certificates for mutual verification.\nOpenID Connect: Built on OAuth 2.0, adds identity verification for managing user identities."
   },
   {
     "objectID": "RPySOC2025talk.html",
