@@ -17,17 +17,17 @@ format:
 
 ## Introduction {.smaller background="#43464B"}
 
--   This presentations describes how to use **APIs** in R to obtain socio-economic indicators.
+This presentations describes how to use `APIs`  in `R` to `obtain` socio-economic `indicators`.
 
 I will cover the following topics:
 
--   `What are APIs` Application Programming Interface
+-   `What are APIs`: Application Programming Interface
 
 -   Key `concepts` using APIs: HTTP Requests, Authentication, Data Formats, Rate Limits, Error Handling
 
--   `Libraries` required in `R` to interact and query `APIs`
+-   `R` `Libraries` to interact and `query` `APIs`
 
--   Using `HHTR2 package` in R
+-   Using `httr2` package in R
 
 -   `Practical example` obtaining `weather data` using an `API`
 
@@ -71,7 +71,7 @@ library(jsonlite)
 :::
 
 ::: {.column width="60%"}
-![](figures/03%20API%20request%20response.png)
+![](figures/03 API request response.png)
 :::
 :::::
 
