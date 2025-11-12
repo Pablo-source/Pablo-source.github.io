@@ -319,7 +319,7 @@ detailed_forecast
 
 1.  `API Authentication`. Secure you API with any of these `methods`:
 
--   `OAuth 2.0`: Ideal for third-party integrations. Uses tokens for secure, delegated access.
+-   `OAuth 2.0`: Ideal for third-party integration. Uses tokens for secure, delegated access.
 
 -   `API Keys`: Simple and easy for internal services but less secure without proper management.
 
