@@ -285,8 +285,8 @@ detailed_forecast
 -   Once we have the data extracted from the API in a Tibble format, we can easily transform it into a `Dataframe` and build `Dashboards` or `Parameterized reports`.
 
 -   **Shiny app Using Leaflet and geospatial data**
-
--   <https://github.com/Pablo-source/Basic-Shiny-app> ![](figures/09_Shiny_App_advanced.png){width="40%"}
+![](figures/09_Shiny_App_advanced.png){width="40%"}
+-   <https://github.com/Pablo-source/Basic-Shiny-app> 
 
 
 ## Further topics API Authentication {.smaller background="#43464B"}
@@ -312,6 +312,8 @@ detailed_forecast
 Some recommendations to keep your API keys secure: 
 - You MUST avoid committing your API Keys to a public GitHub page.
 - **recommended method:** **store** your **API keys** in a **special file** called **.Rprofile**. Making use of the edit_r_profile from {usethis} package to store and edit your .Rprofile
+
+
 - Ensure **.Rprofile** is **included** in your **.gitignore file**, otherwise it will be synced with Github
 
 Creating a **.Rprofile** file in the same place as your .Rproj file:

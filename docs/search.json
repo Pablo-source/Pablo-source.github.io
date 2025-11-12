@@ -620,7 +620,7 @@
     "href": "RPySOC2025talk.html#store-api-data-as-tibble-or-dataframe",
     "title": "Using APIs in R to obtain Indicators for visualizations",
     "section": "Store API data as Tibble or Dataframe",
-    "text": "Store API data as Tibble or Dataframe\n\nOnce we have the data extracted from the API in a Tibble format, we can easily transform it into a Dataframe and build Dashboards or Parameterized reports.\n\n\n\n\nShiny App example \nhttps://github.com/Pablo-source/RPYSOC_2024_Docker_Shiny\n\n\n\nShiny app Using Leaflet and geospatial data\nhttps://github.com/Pablo-source/Basic-Shiny-app \nor Parameterized reports https://github.com/Pablo-source/Eurostat_labour_market/tree/main/Parameterized%20reports"
+    "text": "Store API data as Tibble or Dataframe\n\nOnce we have the data extracted from the API in a Tibble format, we can easily transform it into a Dataframe and build Dashboards or Parameterized reports.\nShiny app Using Leaflet and geospatial data\nhttps://github.com/Pablo-source/Basic-Shiny-app"
   },
   {
     "objectID": "RPySOC2025talk.html#online-resources",
