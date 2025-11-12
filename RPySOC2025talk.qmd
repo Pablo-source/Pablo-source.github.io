@@ -118,7 +118,7 @@ result1
 
 ::::: columns
 ::: {.column width="40%"}
-![](figures/04 httr2_package_tidyverse.png){width="30%"}
+![](figures/04 httr2_package_tidyverse.png){width="50%"}
 :::
 
 ::: {.column width="60%"}
@@ -153,7 +153,7 @@ National_weather <- request(NWS_base_url) %>%  # Append now further parts of the
 National_weather
 ```
 
--   The API will usually return a `JSON` format (JavaScript Object Notation). It is Structured data we can explore.
+- API will usually return a `JSON` format (Structured data).
 
 ## Obtain the API response as a list {.smaller background="#43464B"}
 
@@ -288,16 +288,17 @@ detailed_forecast
 ::::: columns
 ::: {.column width="40%"}
 
--   **Shiny App example** ![](figures/08_Basic_Shiny_app.png){width="30%"}
+-   **Shiny App example** ![](figures/08_Basic_Shiny_app.png){width="40%"}
 
 -   <https://github.com/Pablo-source/RPYSOC_2024_Docker_Shiny>
+
 :::
 
 ::: {.column width="60%"}
 
 -   **Shiny app Using Leaflet and geospatial data**
 
--   <https://github.com/Pablo-source/Basic-Shiny-app> ![](figures/09_Shiny_App_advanced.png){width="50%"}
+-   <https://github.com/Pablo-source/Basic-Shiny-app> ![](figures/09_Shiny_App_advanced.png){width="40%"}
 
 -   or **Parameterized reports** <https://github.com/Pablo-source/Eurostat_labour_market/tree/main/Parameterized%20reports>
 
