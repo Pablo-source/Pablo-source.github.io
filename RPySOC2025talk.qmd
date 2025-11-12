@@ -75,8 +75,7 @@ library(jsonlite)
 :::
 :::::
 
--   Example: Utility Rate Database API. Information and residential electricity rate by location.(Electricity consumption
--   We can use the API for example to obtain a
+-   Example: Utility Rate Database API. Information and residential electricity rate by location
 
 ```{r GET request, echo=TRUE}
 # Data.gov Utility Rates API
