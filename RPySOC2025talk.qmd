@@ -333,6 +333,9 @@ detailed_forecast
 
 -   `OpenID Connect`: Built on OAuth 2.0, adds identity verification for managing user identities.
 
+## Keeping (API) secrets  {.smaller background="#43464B"}
+
+
 ## Online resources {.smaller background="#43464B"}
 
 -   Tidyverse. HTTR2 1.0.0 <https://tidyverse.org/blog/2023/11/httr2-1-0-0/>
