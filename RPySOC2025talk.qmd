@@ -156,8 +156,8 @@ National_weather
 
 ## Obtain the API response as a list {.smaller background="#43464B"}
 
--   We can `display` the contents of the JASON file in a more `readable` way:
--   For that we will use the `glimpse()` function from {dplyr} package
+-   We can `display` the contents of the JASON file in a more `readable` way: {dplyr} package `glimpse()` function 
+
 ::::: columns
 ::: {.column width="40%"}
 ```{r format JASON API query response, echo = TRUE}
@@ -285,7 +285,9 @@ detailed_forecast
 -   Once we have the data extracted from the API in a Tibble format, we can easily transform it into a `Dataframe` and build `Dashboards` or `Parameterized reports`.
 
 -   **Shiny app Using Leaflet and geospatial data**
+
 ![](figures/09_Shiny_App_advanced.png){width="40%"}
+
 -   <https://github.com/Pablo-source/Basic-Shiny-app> 
 
 
