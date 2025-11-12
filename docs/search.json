@@ -536,7 +536,7 @@
     "href": "RPySOC2025talk.html#introduction",
     "title": "Using APIs in R to obtain Indicators for visualizations",
     "section": "Introduction",
-    "text": "Introduction\nThis presentations describes how to use APIs in R to obtain socio-economic indicators.\nI will cover the following topics:\n\nWhat are APIs: Application Programming Interface\nKey concepts using APIs: HTTP Requests, Authentication, Data Formats, Rate Limits, Error Handling\nR Libraries to interact and query APIs\nUsing httr2 package in R\nPractical example obtaining weather data using an API"
+    "text": "Introduction\nThis presentations describes how to use APIs in R to obtain socio-economic indicators.\nIt will cover the following topics:\n\nWhat are APIs: Application Programming Interface\nKey concepts using APIs: HTTP Requests, Authentication, Data Formats, Rate Limits, Error Handling\nR Libraries to interact and query APIs\nUsing httr2 package in R\nPractical example obtaining weather data using an API"
   },
   {
     "objectID": "RPySOC2025talk.html#what-are-apis",
