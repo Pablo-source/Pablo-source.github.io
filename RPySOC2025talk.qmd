@@ -118,7 +118,7 @@ result1
 
 ::::: columns
 ::: {.column width="40%"}
-![](figures/04 httr2_package_tidyverse.png)
+![](figures/04 httr2_package_tidyverse.png){width="30%"}
 :::
 
 ::: {.column width="60%"}
