@@ -335,6 +335,22 @@ detailed_forecast
 
 ## Keeping (API) secrets  {.smaller background="#43464B"}
 
+Some recommendations to keep your API keys secure: 
+- You MUST avoid committing your API Keys to a public GitHub page.
+- **recommended method:** **store** your **API keys** in a **special file** called **.Rprofile**. Making use of the edit_r_profile from {usethis} package to store and edit your .Rprofile
+- Ensure **.Rprofile** is **included** in your **.gitignore file**, otherwise it will be synced with Github
+
+Creating a **.Rprofile** file in the same place as your .Rproj file:
+- `usethis::edit_r_profile(scope = "project")`
+- Then you can securely enter your API Key details in the `.Rprofile` file
+- In `.Rprofile` file introduce this line: `options(this_is_my_key = "XXXX")`
+- You can securely call `in your R script` your `API keys` this way: `key <- getOption("this_is_my_key")`
+
+Rprofile file considerations:
+- Make sure your `.Rprofile` ends with a `blank line`
+- Make sure `.Rprofile` is included in your `.gitignore` file, `otherwise` it `will be` synced with `Github`
+- `Restart RStudio` after `modifying .Rprofile`  in order to `load` any `new keys` into `memory`
+- Spelling is important when you set the option in your `.Rprofile`
 
 ## Online resources {.smaller background="#43464B"}
 
