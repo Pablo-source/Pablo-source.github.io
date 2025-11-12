@@ -285,15 +285,24 @@ detailed_forecast
 
 -   Once we have the data extracted from the API in a Tibble format, we can easily transform it into a `Dataframe` and build `Dashboards` or `Parameterized reports`.
 
+::::: columns
+::: {.column width="40%"}
+
 -   **Shiny App example** ![](figures/08_Basic_Shiny_app.png){width="30%"}
 
 -   <https://github.com/Pablo-source/RPYSOC_2024_Docker_Shiny>
+:::
+
+::: {.column width="60%"}
 
 -   **Shiny app Using Leaflet and geospatial data**
 
 -   <https://github.com/Pablo-source/Basic-Shiny-app> ![](figures/09_Shiny_App_advanced.png){width="50%"}
 
 -   or **Parameterized reports** <https://github.com/Pablo-source/Eurostat_labour_market/tree/main/Parameterized%20reports>
+
+:::
+:::::
 
 ## Further topics API Authentication {.smaller background="#43464B"}
 
