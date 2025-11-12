@@ -293,7 +293,7 @@ detailed_forecast
 
 ## Further topics API Authentication {.smaller background="#43464B"}
 
-1.  `API Authentication`. Secure you API with any of these `methods`:
+`API Authentication`. Secure you API with any of these `methods`:
 
 -   `OAuth 2.0`: Ideal for third-party integration. Uses tokens for secure, delegated access.
 
