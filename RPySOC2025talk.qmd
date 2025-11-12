@@ -366,8 +366,12 @@ Rprofile file considerations:
 
 ## THANKS ! {.smaller background="#43464B"}
 
--   Any questions?
+- Any questions?
 
--   Email: pablo.leonrodenas\@nhs.net
+- Talk repo: RpySOC_2025_Using_APIs_in_R: <https://github.com/Pablo-source/RPYSOC_2025_Using_APIs_in_R/tree/main>
 
--   My GitHub Repo: <https://github.com/Pablo-source>
+- Slides: <https://pablo-source.github.io/RPySOC2025talk.html#/title-slide>
+
+- Email: pablo.leonrodenas@nhs.net
+
+- My GitHub Repo: <https://github.com/Pablo-source>
